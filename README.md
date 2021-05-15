@@ -20,10 +20,15 @@ Projekt biblioteki do obsługi akcelerometru LSM6DS3 wbudowanego w Arduino Nano 
     - ? Zebranie pomiarów ?
 - Planowane rozszerzenia:
     - Dokończyć w/w.
+    - Rozszerzenie biblioteki o szereg szybszych funkcji, m.in :
+        - Odczyt rejestrów 1- i 2-bajtowych
+        - Inicjalizacja domyślna
+        - + Stałe predefiniujące różne rzeczy
     - Autorska obsługa intefrejsu SPI/I2C.
     - Dokumentacja z wykorzystaniem Doxygen.
     - Instrukcja obsługi biblioteki.
     - Dodatkowo obsługa żyroskopu.
+    
 
 #### v 1.0:
 - Pierwsza wersja programu.

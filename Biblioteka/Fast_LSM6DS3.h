@@ -1,6 +1,8 @@
 #ifndef _FAST_LSM6DS3_H_
 #define _FAST_LSM6DS3_H_
 
+
+
 // Rejestry czujnika
 #define LSM6DS3_FUNC_CFG_ACCESS 0x01
 #define LSM6DS3_SENSOR_SYNC_TIME_FRAME 0x04
@@ -123,5 +125,62 @@
 #define LSM6DS3_MAG_OFFY_H 0x30
 #define LSM6DS3_MAG_OFFZ_L 0x31
 #define LSM6DS3_MAG_OFFZ_H 0x32
+
+// Rejestry zakazane
+// Dopisac adresy sprawdzane w !pro funkcji! zapisujacej do rejestru
+
+#include <Arduino.h>
+#include <Wire.h>
+
+class LSM6DS3
+{
+    public:    
+
+        // Konstruktor obiektu akcelerometru
+        LSM6DS3 (TwoWire& i2c, uint8_t i2c_addr);
+
+        // Destruktor obiektu akcelerometru
+        ~LSM6DS3();
+
+
+        // Inicjacja akcelerometru - domyslna, najprostsza
+        int begin();
+        // Dopisac taka dla pro uzytkownikow
+
+        // Zakonczenie akcelerometru
+        void end();
+
+        // Metoda czytania rejestru bytes-bajtowego
+        int readRegister (uint8_t addr, uint8_t *data, uint8_t bytes);
+
+        
+        
+        
+        
+        
+        
+        /*
+        // Funkcje czytania rejestru/rejestrow
+        int readRegister (uint8_t addr);
+        int readMultipleRegisters (uint8_t addr, uint8_t *data, uint8_t bytes);
+        */
+
+
+
+    
+    private:
+
+        TwoWire* I2C; // uchwyt do struktury I2C
+        uint8_t I2C_Address; // adres (Slave) I2C akcelerometru
+
+        // Funkcja zapisu do rejestru
+        int writeRegister (uint8_t addr, uint8_t value);
+
+
+
+}
+
+
+
 
 #endif
