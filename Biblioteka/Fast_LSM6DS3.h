@@ -1,7 +1,7 @@
 #ifndef _FAST_LSM6DS3_H_
 #define _FAST_LSM6DS3_H_
 
-
+#define LSM6DS3_I2C_ADDRESS_DEFAULT 0x6A // domyslny adres I2C akcelerometru
 
 // Rejestry czujnika
 #define LSM6DS3_FUNC_CFG_ACCESS 0x01
@@ -153,6 +153,8 @@ class LSM6DS3
         // Metoda czytania rejestru bytes-bajtowego
         int readRegister (uint8_t addr, uint8_t *data, uint8_t bytes);
 
+        // Metoda odczytu pomiaru z akcelerometru
+        int readAcceleration (float &x, float &y, float &z);
         
         
         
@@ -173,12 +175,15 @@ class LSM6DS3
         TwoWire* I2C; // uchwyt do struktury I2C
         uint8_t I2C_Address; // adres (Slave) I2C akcelerometru
 
+        // Metoda czytania rejestru 1-bajtowego do zmiennej
+        int getRegister (uint8_t addr, uint8_t *data);
+
         // Funkcja zapisu do rejestru
         int writeRegister (uint8_t addr, uint8_t value);
 
 
 
-}
+};
 
 
 
