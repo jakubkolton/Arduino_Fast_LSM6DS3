@@ -5,10 +5,10 @@
 
 
 // Konstruktor obiektu akcelerometru
-LSM6DS3 :: LSM6DS3 (TwoWire& i2c, uint8_t i2c_addr);
+LSM6DS3 :: LSM6DS3 (TwoWire& i2c, uint8_t i2c_addr)
 {
     I2C = &i2c,
-    I2C_Adress = i2c_addr;
+    I2C_Address = i2c_addr;
 }
 
 // Destruktor obiektu akcelerometru
@@ -24,13 +24,13 @@ int LSM6DS3 :: getRegister (uint8_t addr, uint8_t *data)
     I2C->write(addr); // wyslanie adresu rejestru
 
     // Obsluga bledu transmisji
-    if (I2C->endTransmission(false) != 0)
+    if (0 != I2C->endTransmission(false))
     {
         return -1; // kod bledu
     }
 
     // Obsluga zbyt malej liczby odebranych bajtow
-    if (I2C->requestFrom(I2C_Address) != 1) 
+    if (1 != I2C->requestFrom(I2C_Address)) 
     {
         return 0; // kod bledu
     }
@@ -47,7 +47,7 @@ int LSM6DS3 :: readRegister (uint8_t addr)
     uint8_t value; // wartosc zwracana z rejestru
 
     // Obsluga odczytu i ewentualnego bledu
-    if (getRegister(addr, &value) != 1)
+    if (1 != getRegister(addr, &value))
     {
         return -1; // kod bledu - nie otrzymano zadnego bajtu danych
     }
@@ -103,7 +103,7 @@ int LSM6DS3 :: begin()
     I2C->begin(); // dolaczenie sie do magistrali I2C
 
     // Sprawdzenie obecnosci akcelerometru na magistrali
-    if (readRegister(LSM6DS3_WHO_AM_I_REG) != 0x69) 
+    if (0x69 != readRegister(LSM6DS3_WHO_AM_I_REG)) 
     {
         end(); // co to robi?
         return -1; // przerwanie procedury
