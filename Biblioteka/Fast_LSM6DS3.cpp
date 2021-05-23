@@ -1,5 +1,5 @@
 #include "Fast_LSM6DS3.h"
-#include <Arduino.h> // wywalic potem, ale Visual szaleje z typami uint8_t bez tego
+//#include <Arduino.h> // wywalic potem, ale Visual szaleje z typami uint8_t bez tego
 
 
 
@@ -18,7 +18,7 @@ LSM6DS3 :: ~LSM6DS3()
 }
 
 // Metoda czytania rejestru 1-bajtowego do zmiennej
-int LSM6DS3 :: getRegister (uint8_t addr, uint8_t *data)
+int LSM6DS3 :: getRegister (uint8_t addr, uint8_t &data)
 {
     I2C->beginTransmission(I2C_Address); // rozpoczecie transmisji w kierunku Slave - wyslanie jego adresu + bitu Read
     I2C->write(addr); // wyslanie adresu rejestru
@@ -36,7 +36,7 @@ int LSM6DS3 :: getRegister (uint8_t addr, uint8_t *data)
     }
 
     // Odczyty rejestru - jednego bajtu
-    *data = I2C->read();
+    data = I2C->read();
     
     return 1; // kod poprawnego wykonania
 }
@@ -47,7 +47,7 @@ int LSM6DS3 :: readRegister (uint8_t addr)
     uint8_t value; // wartosc zwracana z rejestru
 
     // Obsluga odczytu i ewentualnego bledu
-    if (1 != getRegister(addr, &value))
+    if (1 != getRegister(addr, value))
     {
         return -1; // kod bledu - nie otrzymano zadnego bajtu danych
     }
@@ -59,22 +59,22 @@ int LSM6DS3 :: readRegister (uint8_t addr)
 int LSM6DS3 :: readAcceleration(float &x, float &y, float &z)
 {
     // ???czy nie wystarczy uint8_t???
-    int16_t dataReg; // bufor na odczytywany rejestr
+    uint8_t dataReg; // bufor na odczytywany rejestr
 
     // Oś X
-    if (1 != getRegister(LSM6DS3_OUTX_L_XL, (uint8_t *)dataReg))
+    if (1 != getRegister(LSM6DS3_OUTX_L_XL, dataReg))
         x = NAN; // blad - not a number
     else
         x = dataReg * 4.0 / 32768.0; // ze wzoru na przyspieszenie
 
     // Oś Y
-    if (1 != getRegister(LSM6DS3_OUTY_L_XL, (uint8_t *)dataReg))
+    if (1 != getRegister(LSM6DS3_OUTY_L_XL, dataReg))
         y = NAN; // blad - not a number
     else
         y = dataReg * 4.0 / 32768.0; // ze wzoru na przyspieszenie
 
     // Oś Z
-    if (1 != getRegister(LSM6DS3_OUTZ_L_XL, (uint8_t *)dataReg))
+    if (1 != getRegister(LSM6DS3_OUTZ_L_XL, dataReg))
         z = NAN; // blad - not a number
     else
         z = dataReg * 4.0 / 32768.0; // ze wzoru na przyspieszenie

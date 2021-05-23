@@ -176,7 +176,7 @@ class LSM6DS3
         uint8_t I2C_Address; // adres (Slave) I2C akcelerometru
 
         // Metoda czytania rejestru 1-bajtowego do zmiennej
-        int getRegister (uint8_t addr, uint8_t *data);
+        int getRegister (uint8_t addr, uint8_t &data);
 
         // Funkcja zapisu do rejestru
         int writeRegister (uint8_t addr, uint8_t value);
