@@ -30,7 +30,7 @@ int LSM6DS3 :: getRegister (uint8_t addr, uint8_t *data)
     }
 
     // Obsluga zbyt malej liczby odebranych bajtow
-    if (1 != I2C->requestFrom(I2C_Address)) 
+    if (1 != I2C->requestFrom(I2C_Address, 1)) 
     {
         return 0; // kod bledu
     }
@@ -85,11 +85,11 @@ int LSM6DS3 :: readAcceleration(float &x, float &y, float &z)
 // Funkcja zapisu do rejestru (wpisywane jest chyba tylko do 1-bajtowych)
 int LSM6DS3 :: writeRegister (uint8_t addr, uint8_t value)
 {
-    SPI->beginTransmission(I2C_Address); // rozpoczecie transmisji w kierunku Slave - wyslanie jego adresu + bitu Write
+    I2C->beginTransmission(I2C_Address); // rozpoczecie transmisji w kierunku Slave - wyslanie jego adresu + bitu Write
     I2C->write(addr); // wyslanie adresu rejestru
 
     // Obsluga bledu transmisji
-    if (I2C->endTransmission() != 0)
+    if (0 != I2C->endTransmission())
     {
         return -1; // kod bledu
     }
@@ -103,7 +103,7 @@ int LSM6DS3 :: begin()
     I2C->begin(); // dolaczenie sie do magistrali I2C
 
     // Sprawdzenie obecnosci akcelerometru na magistrali
-    if (0x69 != readRegister(LSM6DS3_WHO_AM_I_REG)) 
+    if (0x69 != readRegister(LSM6DS3_WHO_AM_I)) 
     {
         end(); // co to robi?
         return -1; // przerwanie procedury
@@ -124,7 +124,7 @@ int LSM6DS3 :: begin()
 
     // Set the ODR config register to ODR/4
     writeRegister(LSM6DS3_CTRL8_XL, 0x09);
-    }
+    
 
     return 1;
 }
@@ -135,7 +135,7 @@ void LSM6DS3 :: end()
     writeRegister(LSM6DS3_CTRL2_G, 0x00); // co to robi?
     writeRegister(LSM6DS3_CTRL1_XL, 0x00); // co to robi?
 
-    SPI->end(); // konczy obiekt SPI
+    I2C->end(); // konczy obiekt SPI
 }
 
 /*

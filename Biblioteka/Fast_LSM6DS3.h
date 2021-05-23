@@ -21,7 +21,7 @@
 #define LSM6DS3_CTRL4_C 0x13
 #define LSM6DS3_CTRL5_C 0x14
 #define LSM6DS3_CTRL6_C 0x15
-#define LSM6DS3_CTRL7_C 0x16
+#define LSM6DS3_CTRL7_G 0x16
 #define LSM6DS3_CTRL8_XL 0x17
 #define LSM6DS3_CTRL9_XL 0x18
 #define LSM6DS3_CTRL10_C 0x19
@@ -150,8 +150,8 @@ class LSM6DS3
         // Zakonczenie akcelerometru
         void end();
 
-        // Metoda czytania rejestru bytes-bajtowego
-        int readRegister (uint8_t addr, uint8_t *data, uint8_t bytes);
+        // Metoda zwracajaca wartosc rejestru do zmiennej
+        int readRegister (uint8_t addr);
 
         // Metoda odczytu pomiaru z akcelerometru
         int readAcceleration (float &x, float &y, float &z);
