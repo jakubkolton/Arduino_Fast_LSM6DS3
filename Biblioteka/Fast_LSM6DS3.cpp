@@ -1,7 +1,4 @@
 #include "Fast_LSM6DS3.h"
-//#include <Arduino.h> // wywalic potem, ale Visual szaleje z typami uint8_t bez tego
-
-
 
 
 // Konstruktor obiektu akcelerometru
@@ -59,25 +56,35 @@ int LSM6DS3 :: readRegister (uint8_t addr)
 int LSM6DS3 :: readAcceleration(float &x, float &y, float &z)
 {
     // ???czy nie wystarczy uint8_t???
-    uint8_t dataReg; // bufor na odczytywany rejestr
+    int16_t dataReg; // bufor na odczytywany rejestr
+    uint8_t MSB, LSB; // bufor na MSB i LSB
 
     // Oś X
-    if (1 != getRegister(LSM6DS3_OUTX_L_XL, dataReg))
+    if ((1 != getRegister(LSM6DS3_OUTX_L_XL, LSB)) || 
+        (1 != getRegister(LSM6DS3_OUTX_H_XL, MSB)))
         x = NAN; // blad - not a number
-    else
+    else {
+        dataReg = (MSB << 8) | LSB;
         x = dataReg * 4.0 / 32768.0; // ze wzoru na przyspieszenie
+    }
 
     // Oś Y
-    if (1 != getRegister(LSM6DS3_OUTY_L_XL, dataReg))
+    if ((1 != getRegister(LSM6DS3_OUTY_L_XL, LSB)) || 
+        (1 != getRegister(LSM6DS3_OUTY_H_XL, MSB)))
         y = NAN; // blad - not a number
-    else
+    else {
+        dataReg = (MSB << 8) | LSB;
         y = dataReg * 4.0 / 32768.0; // ze wzoru na przyspieszenie
+    }
 
-    // Oś Z
-    if (1 != getRegister(LSM6DS3_OUTZ_L_XL, dataReg))
+    // Oś X
+    if ((1 != getRegister(LSM6DS3_OUTZ_L_XL, LSB)) || 
+        (1 != getRegister(LSM6DS3_OUTZ_H_XL, MSB)))
         z = NAN; // blad - not a number
-    else
+    else {
+        dataReg = (MSB << 8) | LSB;
         z = dataReg * 4.0 / 32768.0; // ze wzoru na przyspieszenie
+    }
 
     return 1;
 }
@@ -87,6 +94,7 @@ int LSM6DS3 :: writeRegister (uint8_t addr, uint8_t value)
 {
     I2C->beginTransmission(I2C_Address); // rozpoczecie transmisji w kierunku Slave - wyslanie jego adresu + bitu Write
     I2C->write(addr); // wyslanie adresu rejestru
+    I2C->write(value); // wyslanie wartosci w ramce
 
     // Obsluga bledu transmisji
     if (0 != I2C->endTransmission())
@@ -138,46 +146,3 @@ void LSM6DS3 :: end()
     I2C->end(); // konczy obiekt SPI
 }
 
-/*
-// Funkcje czytania jednego rejestru
-int readRegister (uint8_t addr)
-{
-    uint8_t value; // wartosc zwracana z rejestru
-
-    // Obsluga odczytu i ewentualnego bledu
-    if (readMultipleRegisters(addr, &value, sizeof(value)) != 1)
-    {
-        return -1; // kod bledu - nie otrzymano zadnego bajtu danych
-    }
-
-    return value;
-}
-
-// Metoda czytania rejestru bytes-bajtowego do tablicy (chocby 1-elementowej)
-int LSM6DS3 :: readMultipleRegisters (uint8_t addr, uint8_t *data, uint8_t bytes)
-{
-    I2C->beginTransmission(I2C_Address); // rozpoczecie transmisji w kierunku Slave - wyslanie jego adresu + bitu R
-    I2C->write(addr); // wyslanie adresu rejestu
-
-    // Obsluga bledu transmisji
-    if (I2C->endTransmission(false) != 0)
-    {
-        return -1; // kod bledu
-    }
-
-    // Obsluga zbyt malej liczby odebranych bajtow
-    if (I2C->requestFrom(I2C_Address) != bytes) 
-    {
-        return 0; // kod bledu
-    }
-
-    // Obsluga poprawnej liczby odebranych bajtow
-    for (uint8_t i = 0; i < bytes; i++) // kolejne bajty
-    {
-        *data = I2C->read(); // odczyt jednego bajtu
-        ++data; // kolejny bajt
-    }
-
-    return 1; // kod poprawnego wykonania
-}
-*/

@@ -1,6 +1,6 @@
 # Fast_LSM6DS3 - OPIS PROJEKTU
 
-    Wersja projektu: v 2.0 (niepełna)
+    Wersja projektu: v 2.0
 
 Projekt biblioteki do obsługi akcelerometru LSM6DS3 wbudowanego w Arduino Nano 33.
 
@@ -16,26 +16,22 @@ Projekt biblioteki do obsługi akcelerometru LSM6DS3 wbudowanego w Arduino Nano 
 #### v 2.0:
 - Autorska obsługa akcelerometru z wykorzystaniem cudzej biblioteki do interfejsu SPI/I2C:
     - Zdefiniowano stałe dla adresów rejestrów akcelerometru
-    - ? Inicjalizacja akcelerometru ?
-    - ? Zebranie pomiarów ?
+    - Domyślna inicjalizacja akcelerometru (predefiniowane ustawienia)
+    - Funkcje wpisu i odczytu z rejestrów
+    - Zebranie pomiarów przyspieszenia
 - Planowane rozszerzenia:
-    - Dokończyć w/w.
-    - Rozszerzenie biblioteki o szereg szybszych funkcji, m.in :
-        - Odczyt rejestrów 1- i 2-bajtowych
-        - Inicjalizacja domyślna
-        - + Stałe predefiniujące różne rzeczy
-    - Autorska obsługa intefrejsu SPI/I2C.
+    - Stałe predefiniujące różne parametry (częstotliwość, zakres pomiarowy itp.).
+    - Funkcja inicjująca akcelerometr z wybranymi parametrami.
+    - Publiczna funkcja zapisu do rejestrów (sprawdzająca, czy są na liście rejestrów "dozwolonych").
+    - Funkcja pobierająca zakres pomiarowy, potrzebny przy obliczaniu przyspieszenia.
+    - Wyodrębnienie funkcji uniwersalnych, funkcji domyślnych i funkcji szybkich (z małą kontrolą użytkownika, ale szybkim wykonaniem kodu).
     - Dokumentacja z wykorzystaniem Doxygen.
     - Instrukcja obsługi biblioteki.
-    - Dodatkowo obsługa żyroskopu.
+    - Porównanie szybkości biblioteki z "konkurencyjnymi" z GitHuba.
+    - Dodatkowo obsługa żyroskopu, termometru.
+    - Autorska obsługa intefrejsu SPI/I2C.
     
 
 #### v 1.0:
 - Pierwsza wersja programu.
 - Uruchomienie cudzej biblioteki w celu sprawdzenia poprawności pracy peryferiów, programatora itp.
-- Planowane rozszerzenia:
-    - Autorska obsługa akcelerometru z wykorzystaniem cudzej biblioteki do interfejsu SPI/I2C
-    - Autorska obsługa intefrejsu SPI/I2C.
-    - Dokumentacja z wykorzystaniem Doxygen.
-    - Instrukcja obsługi biblioteki.
-    - Dodatkowo obsługa żyroskopu.

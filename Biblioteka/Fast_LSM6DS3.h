@@ -126,8 +126,6 @@
 #define LSM6DS3_MAG_OFFZ_L 0x31
 #define LSM6DS3_MAG_OFFZ_H 0x32
 
-// Rejestry zakazane
-// Dopisac adresy sprawdzane w !pro funkcji! zapisujacej do rejestru
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -155,19 +153,6 @@ class LSM6DS3
 
         // Metoda odczytu pomiaru z akcelerometru
         int readAcceleration (float &x, float &y, float &z);
-        
-        
-        
-        
-        
-        
-        /*
-        // Funkcje czytania rejestru/rejestrow
-        int readRegister (uint8_t addr);
-        int readMultipleRegisters (uint8_t addr, uint8_t *data, uint8_t bytes);
-        */
-
-
 
     
     private:
@@ -180,8 +165,6 @@ class LSM6DS3
 
         // Funkcja zapisu do rejestru
         int writeRegister (uint8_t addr, uint8_t value);
-
-
 
 };
 
