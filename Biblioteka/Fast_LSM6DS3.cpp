@@ -38,7 +38,7 @@ int LSM6DS3 :: getRegister (uint8_t addr, uint8_t &data)
     return 1; // kod poprawnego wykonania
 }
 
-// Metoda zwracajaca wartosc rejestru do zmiennej
+// Metoda zwracajaca wartosc rejestru
 int LSM6DS3 :: readRegister (uint8_t addr)
 {
     uint8_t value; // wartosc zwracana z rejestru
@@ -89,9 +89,36 @@ int LSM6DS3 :: readAcceleration(float &x, float &y, float &z)
     return 1;
 }
 
-// Funkcja zapisu do rejestru (wpisywane jest chyba tylko do 1-bajtowych)
+// Funkcja szybkiego zapisu do rejestru (wpisywane jest chyba tylko do 1-bajtowych)
+int LSM6DS3 :: writeRegisterFast (uint8_t addr, uint8_t value)
+{
+    I2C->beginTransmission(I2C_Address); // rozpoczecie transmisji w kierunku Slave - wyslanie jego adresu + bitu Write
+    I2C->write(addr); // wyslanie adresu rejestru
+    I2C->write(value); // wyslanie wartosci w ramce
+
+    // Obsluga bledu transmisji
+    if (0 != I2C->endTransmission())
+    {
+        return -1; // kod bledu
+    }
+
+    return 1; // kod poprawnego wykonania
+}
+
+// // Funkcja zapisu do "bezpiecznego" rejestru (wpisywane jest chyba tylko do 1-bajtowych)
 int LSM6DS3 :: writeRegister (uint8_t addr, uint8_t value)
 {
+    // Sprawdzenie rejestrow zarezerwowanych
+    for (int i = 0; i < 7; i++) {
+        if (addr == LSM6DS3_RESERVED[i]) {
+            return -2; // kod bledu - adres zarezerwowany
+        }
+    }
+    if (((addr >= 0x43) && (addr <= 0x48)) || ((addr >= 0x54) && (addr <= 0x57))  ||
+                   ((addr >= 0x60) && (addr <= 0x65)) || (addr > 0x6B)) {
+        return -2; // kod bledu - adres zarezerwowany    
+    }
+
     I2C->beginTransmission(I2C_Address); // rozpoczecie transmisji w kierunku Slave - wyslanie jego adresu + bitu Write
     I2C->write(addr); // wyslanie adresu rejestru
     I2C->write(value); // wyslanie wartosci w ramce
@@ -118,20 +145,19 @@ int LSM6DS3 :: begin()
     }
 
     
-    // Sztywne ustawienie parametrow
-    // Jak w cudzej bibliotece
+    // Sztywne ustawienie parametrow - jak w cudzej bibliotece
     //set the gyroscope control register to work at 104 Hz, 2000 dps and in bypass mode
-    writeRegister(LSM6DS3_CTRL2_G, 0x4C);
+    writeRegisterFast(LSM6DS3_CTRL2_G, 0x4C);
 
     // Set the Accelerometer control register to work at 104 Hz, 4 g,and in bypass mode and enable ODR/4
     // low pass filter (check figure9 of LSM6DS3's datasheet)
-    writeRegister(LSM6DS3_CTRL1_XL, 0x4A);
+    writeRegisterFast(LSM6DS3_CTRL1_XL, 0x4A);
 
     // set gyroscope power mode to high performance and bandwidth to 16 MHz
-    writeRegister(LSM6DS3_CTRL7_G, 0x00);
+    writeRegisterFast(LSM6DS3_CTRL7_G, 0x00);
 
     // Set the ODR config register to ODR/4
-    writeRegister(LSM6DS3_CTRL8_XL, 0x09);
+    writeRegisterFast(LSM6DS3_CTRL8_XL, 0x09);
     
 
     return 1;
@@ -140,8 +166,8 @@ int LSM6DS3 :: begin()
 // Zakonczenie akcelerometru
 void LSM6DS3 :: end()
 {
-    writeRegister(LSM6DS3_CTRL2_G, 0x00); // co to robi?
-    writeRegister(LSM6DS3_CTRL1_XL, 0x00); // co to robi?
+    writeRegisterFast(LSM6DS3_CTRL2_G, 0x00); // co to robi?
+    writeRegisterFast(LSM6DS3_CTRL1_XL, 0x00); // co to robi?
 
     I2C->end(); // konczy obiekt SPI
 }

@@ -1,6 +1,9 @@
 #ifndef _FAST_LSM6DS3_H_
 #define _FAST_LSM6DS3_H_
 
+#include <Arduino.h>
+#include <Wire.h>
+
 #define LSM6DS3_I2C_ADDRESS_DEFAULT 0x6A // domyslny adres I2C akcelerometru
 
 // Rejestry czujnika
@@ -30,7 +33,6 @@
 #define LSM6DS3_TAP_SRC 0x1C
 #define LSM6DS3_D6D_SRC 0x1D
 #define LSM6DS3_STATUS_REG 0x1E
-#define LSM6DS3_RESERVED 0x1F
 #define LSM6DS3_OUT_TEMP_L 0x20
 #define LSM6DS3_OUT_TEMP_H 0x21
 #define LSM6DS3_OUTX_L_G 0x22
@@ -90,7 +92,7 @@
 #define LSM6DS3_OUT_MAG_RAW_Y_L 0x68
 #define LSM6DS3_OUT_MAG_RAW_Y_H 0x69
 #define LSM6DS3_OUT_MAG_RAW_Z_L 0x6A
-#define LSM6DS3_OUT_MAG_RAW_X_H 0x6B
+#define LSM6DS3_OUT_MAG_RAW_Z_H 0x6B
 
 // Rejestry wbudowanych funkcji
 #define LSM6DS3_SLV0_ADD 0x02
@@ -126,9 +128,10 @@
 #define LSM6DS3_MAG_OFFZ_L 0x31
 #define LSM6DS3_MAG_OFFZ_H 0x32
 
+// Rejestry zarezerwowane - nie wpisywac do nich
+const uint8_t LSM6DS3_RESERVED[] = {0x00, 0x02, 0x03, 0x05, 0xDC, 0x1F};
+// Dodatkowo: 0x43-48, 0x54-57, 0x60-65
 
-#include <Arduino.h>
-#include <Wire.h>
 
 class LSM6DS3
 {
@@ -148,11 +151,14 @@ class LSM6DS3
         // Zakonczenie akcelerometru
         void end();
 
-        // Metoda zwracajaca wartosc rejestru do zmiennej
+        // Metoda zwracajaca wartosc rejestru
         int readRegister (uint8_t addr);
 
         // Metoda odczytu pomiaru z akcelerometru
         int readAcceleration (float &x, float &y, float &z);
+
+        // Funkcja zapisu do "bezpiecznego" rejestru
+        int writeRegister (uint8_t addr, uint8_t value);
 
     
     private:
@@ -163,8 +169,8 @@ class LSM6DS3
         // Metoda czytania rejestru 1-bajtowego do zmiennej
         int getRegister (uint8_t addr, uint8_t &data);
 
-        // Funkcja zapisu do rejestru
-        int writeRegister (uint8_t addr, uint8_t value);
+        // Funkcja szybkiego zapisu do rejestru
+        int writeRegisterFast (uint8_t addr, uint8_t value);
 
 };
 
