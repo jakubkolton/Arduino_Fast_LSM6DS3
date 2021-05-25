@@ -16,8 +16,10 @@ void setup() {
     delay(1000); // Pomyslec o liczniku programowym
   }
 
-  // Formatowanie wynikow pomiaru
-  Serial.println("Przyspieszenie w jednostkach g = 9,81 m/s^2:\nX: \t Y: \t Z:");
+  // Formatowanie wynikow pomiaru przyspieszenia
+  // Serial.println("Przyspieszenie w jednostkach g = 9,81 m/s^2:\r\nX: \t Y: \t Z:");
+  //Serial.println("Przyspieszenie katowe w jednostkach */sekunde:\r\nX: \t Y: \t Z:");
+  Serial.println("Temperatura w jednostkach *C:");
 }
 
 void loop()
@@ -25,13 +27,15 @@ void loop()
   // Pomiary przyspieszenia
   float X, Y, Z; // przyszpieszenia w 3 osiach
 
-  LSM.readAcceleration(X, Y, Z);
+  // LSM.readAcceleration(X, Y, Z);
+  //LSM.readAngular(X, Y, Z);
+  LSM.readTemperature(X);
   Serial.print(X);
-  Serial.print(" \t");
-  Serial.print(Y);
-  Serial.print(" \t");
-  Serial.print(Z);
-  Serial.print("\n");
+  // Serial.print(" \t");
+  // Serial.print(Y);
+  // Serial.print(" \t");
+  // Serial.print(Z);
+  Serial.print("\n\r");
 
-  delay(1000); // Pomyslec o liczniku programowym albo przerwaniu
+  delay(500); // Pomyslec o liczniku programowym albo przerwaniu
 }

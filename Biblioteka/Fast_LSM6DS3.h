@@ -157,6 +157,12 @@ class LSM6DS3
         // Metoda odczytu pomiaru z akcelerometru
         int readAcceleration (float &x, float &y, float &z);
 
+        // Metoda odczytu pomiaru z zyroskopu
+        int readAngular(float &x, float &y, float &z);
+
+        // Metoda odczytu pomiaru z termometru
+        int readTemperature(float &x);
+
         // Funkcja zapisu do "bezpiecznego" rejestru
         int writeRegister (uint8_t addr, uint8_t value);
 

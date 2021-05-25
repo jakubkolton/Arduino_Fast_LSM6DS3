@@ -1,6 +1,6 @@
 # Fast_LSM6DS3 - OPIS PROJEKTU
 
-    Wersja projektu: v 3.0
+    Wersja projektu: v 4.0 
 
 Projekt biblioteki do obsługi akcelerometru LSM6DS3 (wbudowanego w Arduino Nano 33) z pomocą interfejsu I2C.
 
@@ -16,6 +16,19 @@ Projekt biblioteki do obsługi akcelerometru LSM6DS3 (wbudowanego w Arduino Nano
 - Wire.h
 
 ## HISTORIA ZMIAN:
+
+#### v 4.0:
+- Autorska obsługa akcelerometru:
+    - Obsługa żyroskopu i termometru.
+- Planowane rozszerzenia:
+    - Stałe predefiniujące różne parametry (częstotliwość, zakres pomiarowy itp.).
+    - Funkcja inicjująca akcelerometr z wybranymi parametrami.
+    - Funkcja pobierająca zakres pomiarowy, potrzebny przy obliczaniu przyspieszenia.
+    - Wyodrębnienie funkcji uniwersalnych, funkcji domyślnych i funkcji szybkich (z małą kontrolą użytkownika, ale szybkim wykonaniem kodu).
+    - Dokumentacja z wykorzystaniem Doxygen.
+    - Instrukcja obsługi biblioteki.
+    - Porównanie szybkości biblioteki z "konkurencyjnymi" z GitHuba.
+    - Autorska obsługa interfejsu I2C.
 
 #### v 3.0:
 - Autorska obsługa akcelerometru:

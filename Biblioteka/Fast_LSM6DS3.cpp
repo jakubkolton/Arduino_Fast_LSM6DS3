@@ -55,7 +55,6 @@ int LSM6DS3 :: readRegister (uint8_t addr)
 // Metoda odczytu pomiaru z akcelerometru
 int LSM6DS3 :: readAcceleration(float &x, float &y, float &z)
 {
-    // ???czy nie wystarczy uint8_t???
     int16_t dataReg; // bufor na odczytywany rejestr
     uint8_t MSB, LSB; // bufor na MSB i LSB
 
@@ -84,6 +83,60 @@ int LSM6DS3 :: readAcceleration(float &x, float &y, float &z)
     else {
         dataReg = (MSB << 8) | LSB;
         z = dataReg * 4.0 / 32768.0; // ze wzoru na przyspieszenie
+    }
+
+    return 1;
+}
+
+// Metoda odczytu pomiaru z zyroskopu
+int LSM6DS3 :: readAngular(float &x, float &y, float &z)
+{
+    int16_t dataReg; // bufor na odczytywany rejestr
+    uint8_t MSB, LSB; // bufor na MSB i LSB
+
+    // Oś X
+    if ((1 != getRegister(LSM6DS3_OUTX_L_G, LSB)) || 
+        (1 != getRegister(LSM6DS3_OUTX_H_G, MSB)))
+        x = NAN; // blad - not a number
+    else {
+        dataReg = (MSB << 8) | LSB;
+        x = dataReg * 2000.0 / 32768.0; // ze wzoru na przyspieszenie katowe
+    }
+
+    // Oś Y
+    if ((1 != getRegister(LSM6DS3_OUTY_L_G, LSB)) || 
+        (1 != getRegister(LSM6DS3_OUTY_H_G, MSB)))
+        y = NAN; // blad - not a number
+    else {
+        dataReg = (MSB << 8) | LSB;
+        y = dataReg * 2000.0 / 32768.0; // ze wzoru na przyspieszenie katowe
+    }
+
+    // Oś X
+    if ((1 != getRegister(LSM6DS3_OUTZ_L_G, LSB)) || 
+        (1 != getRegister(LSM6DS3_OUTZ_H_G, MSB)))
+        z = NAN; // blad - not a number
+    else {
+        dataReg = (MSB << 8) | LSB;
+        z = dataReg * 2000.0 / 32768.0; // ze wzoru na przyspieszenie katowe
+    }
+
+    return 1;
+}
+
+// Metoda odczytu pomiaru z termometru
+int LSM6DS3 :: readTemperature(float &x)
+{
+    int16_t dataReg; // bufor na odczytywany rejestr
+    uint8_t MSB, LSB; // bufor na MSB i LSB
+
+    if ((1 != getRegister(LSM6DS3_OUT_TEMP_L, LSB)) || 
+        (1 != getRegister(LSM6DS3_OUT_TEMP_H, MSB)))
+        x = NAN; // blad - not a number
+    else {
+        dataReg = (MSB << 8) | LSB;
+        x = 25.0 + (dataReg * 126.0 / 2048.0); // ze wzoru na temperature
+        // T = offset (25) + [odczyt * zakres pomiaru (-40 do 125) / zakres ADC (12b, w tym jeden na znak)]
     }
 
     return 1;
