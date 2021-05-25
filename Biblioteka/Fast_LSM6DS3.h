@@ -133,6 +133,53 @@ const uint8_t LSM6DS3_RESERVED[] = {0x00, 0x02, 0x03, 0x05, 0xDC, 0x1F};
 // Dodatkowo: 0x43-48, 0x54-57, 0x60-65
 
 
+// Ustawienia czujnikow
+
+//      CTRL1_XL - ODR
+#define LSM6DS3_ODR_XL_0 0 // Power-down
+#define LSM6DS3_ODR_XL_12_5 1// 12.5 Hz
+#define LSM6DS3_ODR_XL_26 2 // 26 Hz
+#define LSM6DS3_ODR_XL_52 3 // 52 Hz
+#define LSM6DS3_ODR_XL_104 4
+#define LSM6DS3_ODR_XL_208 5
+#define LSM6DS3_ODR_XL_416 6
+#define LSM6DS3_ODR_XL_833 7
+#define LSM6DS3_ODR_XL_1660 8
+#define LSM6DS3_ODR_XL_3300 9
+#define LSM6DS3_ODR_XL_6660 10 // 6660 Hz
+//      CTRL1_XL - FS
+#define LSM6DS3_FS_XL_2 0 // 2g
+#define LSM6DS3_FS_XL_4 2 // 4g
+#define LSM6DS3_FS_XL_8 3 // 8g
+#define LSM6DS3_FS_XL_16 1 // 16g
+//      CTRL1_XL - BW
+#define LSM6DS3_BW_XL_50 3 // 50 Hz
+#define LSM6DS3_BW_XL_100 2 // 100 Hz
+#define LSM6DS3_BW_XL_200 1 // 200 Hz
+#define LSM6DS3_BW_XL_400 0 // 400 Hz
+//      CTRL8_XL - odgornie 0x09 => ODR/4
+
+//      CTRL2_G - ODR
+#define LSM6DS3_ODR_G_0 0 // Power-down
+#define LSM6DS3_ODR_G_12_5 1// 12.5 Hz
+#define LSM6DS3_ODR_G_26 2 // 26 Hz
+#define LSM6DS3_ODR_G_52 3 // 52 Hz
+#define LSM6DS3_ODR_G_104 4
+#define LSM6DS3_ODR_G_208 5
+#define LSM6DS3_ODR_G_416 6
+#define LSM6DS3_ODR_G_833 7 // 833 MHz
+//      CTRL2_G - FS
+#define LSM6DS3_FS_G_250 0 // 250 dps
+#define LSM6DS3_FS_G_500 1 // 500 dps
+#define LSM6DS3_FS_G_1000 2 // 1000 dps
+#define LSM6DS3_FS_G_2000 3 // 2000 dps
+//      CTRL_7_G - odgornie 0x00 => High Performance, Bandwith = 16 MHz
+
+
+
+
+
+
 class LSM6DS3
 {
     public:    
@@ -146,7 +193,8 @@ class LSM6DS3
 
         // Inicjacja akcelerometru - domyslna, najprostsza
         int begin();
-        // Dopisac taka dla pro uzytkownikow
+        
+        // Inicjalizacja akcelerometru - z wybranymi parametrami
 
         // Zakonczenie akcelerometru
         void end();
@@ -154,13 +202,17 @@ class LSM6DS3
         // Metoda zwracajaca wartosc rejestru
         int readRegister (uint8_t addr);
 
-        // Metoda odczytu pomiaru z akcelerometru
+        // Metoda odczytu pomiaru z akcelerometru (dla dowolnych parametrow)
         int readAcceleration (float &x, float &y, float &z);
 
-        // Metoda odczytu pomiaru z zyroskopu
-        int readAngular(float &x, float &y, float &z);
+        // Metoda szybkiego odczytu pomiaru z akcelerometru - dla predefiniowanych ustawien (?jakich?)
 
-        // Metoda odczytu pomiaru z termometru
+        // Metoda odczytu pomiaru z zyroskopu (dla dowolnych parametrow)
+        int readAngular(float &x, float &y, float &z);
+        
+        // Metoda szybkiego odczytu pomiaru z zyroskopu - dla predefiniowanych ustawien (?jakich?)
+
+        // Metoda (zawsze szybka) odczytu pomiaru z termometru
         int readTemperature(float &x);
 
         // Funkcja zapisu do "bezpiecznego" rejestru
