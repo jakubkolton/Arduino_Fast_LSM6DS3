@@ -168,6 +168,7 @@ const uint8_t LSM6DS3_RESERVED[] = {0x00, 0x02, 0x03, 0x05, 0xDC, 0x1F};
 #define LSM6DS3_ODR_G_208 5
 #define LSM6DS3_ODR_G_416 6
 #define LSM6DS3_ODR_G_833 7 // 833 MHz
+#define LSM6DS3_ODR_G_1666 8 // 1666 MHz
 //      CTRL2_G - FS
 #define LSM6DS3_FS_G_250 0 // 250 dps
 #define LSM6DS3_FS_G_500 1 // 500 dps
@@ -192,31 +193,54 @@ class LSM6DS3
 
 
         // Inicjacja akcelerometru - domyslna, najprostsza
-        int begin();
+        int beginFast();
         
         // Inicjalizacja akcelerometru - z wybranymi parametrami
+        // Paramtery - jak w funkcjach ustawiajacych poszczegolne parametry
+        int begin(uint8_t ODR_XL, uint8_t FS_XL, uint8_t BW_XL, uint8_t ODR_G, uint8_t FS_G);
 
-        // Zakonczenie akcelerometru
+        // Wylaczenie akcelerometru
         void end();
 
         // Metoda zwracajaca wartosc rejestru
         int readRegister (uint8_t addr);
 
         // Metoda odczytu pomiaru z akcelerometru (dla dowolnych parametrow)
-        int readAcceleration (float &x, float &y, float &z);
 
         // Metoda szybkiego odczytu pomiaru z akcelerometru - dla predefiniowanych ustawien (?jakich?)
+        int readAccelerationFast (float &x, float &y, float &z);
 
         // Metoda odczytu pomiaru z zyroskopu (dla dowolnych parametrow)
-        int readAngular(float &x, float &y, float &z);
         
         // Metoda szybkiego odczytu pomiaru z zyroskopu - dla predefiniowanych ustawien (?jakich?)
+        int readAngularFast(float &x, float &y, float &z);
 
         // Metoda (zawsze szybka) odczytu pomiaru z termometru
         int readTemperature(float &x);
 
         // Funkcja zapisu do "bezpiecznego" rejestru
         int writeRegister (uint8_t addr, uint8_t value);
+
+        // Ustawienie ODR (czestotliwosci wysylania pomiarow) akcelerometru
+        // Parametr - od 0 do 10: patrz definicje "LSM6DS3_ODR_XL_????"
+        int setFreq_XL(uint8_t value);
+
+        // Ustawienie FS (zakresu pomiarowego) akcelerometru
+        // Parametr - od 0 do 3: patrz definicje "LSM6DS3_DS_XL_??"
+        int setScale_XL(uint8_t value);
+
+        // Ustawienie BW (pasma filtru anty-aliasingowego) akcelerometru
+        // Parametr - od 0 do 3: patrz definicje "LSM6DS3_BW_XL_???"
+        int setBandwith_XL(uint8_t value);
+
+        // Ustawienie ODR (czestotliwosci wysylania pomiarow) zyroskopu
+        // Parametr - od 0 do 7: patrz definicje "LSM6DS3_ODR_G_???"
+        int setFreq_G(uint8_t value);
+
+        // Ustawienie FS (zakresu pomiarowego) zyroskopu
+        // Parametr - od 0 do 3: patrz definicje "LSM6DS3_FS_G_??"
+        int setScale_G(uint8_t value);
+
 
     
     private:

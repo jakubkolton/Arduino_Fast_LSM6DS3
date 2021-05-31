@@ -13,13 +13,11 @@ void setup() {
   {
     Serial.println("Blad inicjalizacji akcelerometru!");
 
-    delay(1000); // Pomyslec o liczniku programowym
+    delay(1000);
   }
 
   // Formatowanie wynikow pomiaru przyspieszenia
-  // Serial.println("Przyspieszenie w jednostkach g = 9,81 m/s^2:\r\nX: \t Y: \t Z:");
-  //Serial.println("Przyspieszenie katowe w jednostkach */sekunde:\r\nX: \t Y: \t Z:");
-  Serial.println("Temperatura w jednostkach *C:");
+  Serial.println("Przyspieszenie liniowe w jednostkach g = 9,81 m/s^2:\r\nX: \t Y: \t Z:");
 }
 
 void loop()
@@ -27,14 +25,13 @@ void loop()
   // Pomiary przyspieszenia
   float X, Y, Z; // przyszpieszenia w 3 osiach
 
-  // LSM.readAcceleration(X, Y, Z);
-  //LSM.readAngular(X, Y, Z);
-  LSM.readTemperature(X);
+  LSM.readAccelerationFast(X, Y, Z);
+
   Serial.print(X);
-  // Serial.print(" \t");
-  // Serial.print(Y);
-  // Serial.print(" \t");
-  // Serial.print(Z);
+  Serial.print(" \t");
+  Serial.print(Y);
+  Serial.print(" \t");
+  Serial.print(Z);
   Serial.print("\n\r");
 
   delay(500); // Pomyslec o liczniku programowym albo przerwaniu
