@@ -1,8 +1,11 @@
 # Fast_LSM6DS3 - OPIS PROJEKTU
 
-    Wersja projektu: v 5.0 
+    Wersja projektu: v 6.0 
 
 Projekt biblioteki do obsługi akcelerometru LSM6DS3 (wbudowanego w Arduino Nano 33) z pomocą interfejsu I2C.
+
+## Funkcjonalności biblioteki:
+- // UZUPEŁNIĆ
 
 ### Poprawna praca akcelerometru (na moim biurku):
 - Płytka leży na stole: X =  0; Y =  0; Z =  1.
@@ -17,18 +20,24 @@ Projekt biblioteki do obsługi akcelerometru LSM6DS3 (wbudowanego w Arduino Nano
 
 ## HISTORIA ZMIAN:
 
+#### v 6.0:
+- Autorska obsługa akcelerometru:
+    - Funkcja inicjująca akcelerometr z wybranymi parametrami.
+    - Wyodrębnienie funkcji uniwersalnych i domyślnych funkcji szybkich (z małą kontrolą użytkownika, ale szybkim wykonaniem kodu).
+    - Przygotowanie przykładowych programów wykorzystujących bibliotekę.
+    - // DOKONCZYC N/W
+    - // UPORZADKOWAC PLIKI .C, .H, .INO
+    - // POSZUKAC CZY WARTO SPRAWDZAC JESZCZE CO ZWRACAJA DANE FUNKCJE, MOZE GDZIES NIE ZABEZPIECZYLEM PROGRAMU
+- Planowane rozszerzenia:  
+    - Instrukcja obsługi biblioteki.
+    - Dokumentacja z wykorzystaniem Doxygen.
+    - Porównanie szybkości biblioteki z "konkurencyjnymi" z GitHuba.
+
 #### v 5.0:
 - Autorska obsługa akcelerometru:
     - Stałe predefiniujące różne parametry (częstotliwość, zakres pomiarowy itp.).
     - Funkcje ustawiające parametry akcelerometru i żyroskopu (częstotliwość próbkowania, zakres pomiarowy itp.).
-- Planowane rozszerzenia:
-    - Funkcja inicjująca akcelerometr z wybranymi parametrami.
-    - Funkcja pobierająca zakres pomiarowy, potrzebny przy obliczaniu przyspieszenia.
-    - Wyodrębnienie funkcji uniwersalnych, funkcji domyślnych i funkcji szybkich (z małą kontrolą użytkownika, ale szybkim wykonaniem kodu).
-    - Dokumentacja z wykorzystaniem Doxygen.
-    - Instrukcja obsługi biblioteki.
-    - Porównanie szybkości biblioteki z "konkurencyjnymi" z GitHuba.
-    - Autorska obsługa interfejsu I2C.
+
 
 #### v 4.0:
 - Autorska obsługa akcelerometru:

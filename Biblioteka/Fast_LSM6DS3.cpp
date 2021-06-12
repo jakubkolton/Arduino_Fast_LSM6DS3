@@ -51,6 +51,72 @@ int LSM6DS3 ::readRegister(uint8_t addr)
     return value;
 }
 
+// Metoda odczytu pomiaru z akcelerometru (dla dowolnych parametrow)
+int LSM6DS3 ::readAcceleration(float &x, float &y, float &z)
+{
+    int16_t dataReg;  // bufor na odczytywany rejestr
+    uint8_t MSB, LSB; // bufor na MSB i LSB
+    uint8_t CTRL1_XL; // bufor na rejestr CTRL1_XL
+    uint8_t range; // zakres pomiarowy
+
+    // Zakres pomiarowy
+    if (1 != getRegister(LSM6DS3_CTRL1_XL, CTRL1_XL))
+        return -1; // kod bledu
+    else
+    {
+        range = (CTRL1_XL & 0x0C) >> 2;
+        switch (range) 
+        {
+            case LSM6DS3_FS_XL_2:
+                range = 2;
+                break;
+            case LSM6DS3_FS_XL_4:
+                range = 4;
+                break;
+            case LSM6DS3_FS_XL_8:
+                range = 8;
+                break;
+            case LSM6DS3_FS_XL_16:
+                range = 16;
+                break;
+            default:
+                break;
+        }
+    }
+    
+    // Oś X
+    if ((1 != getRegister(LSM6DS3_OUTX_L_XL, LSB)) ||
+        (1 != getRegister(LSM6DS3_OUTX_H_XL, MSB)))
+        x = NAN; // blad - not a number
+    else
+    {
+        dataReg = (MSB << 8) | LSB;
+        x = dataReg * range / 32768.0; // ze wzoru na przyspieszenie
+    }
+
+    // Oś Y
+    if ((1 != getRegister(LSM6DS3_OUTY_L_XL, LSB)) ||
+        (1 != getRegister(LSM6DS3_OUTY_H_XL, MSB)))
+        y = NAN; // blad - not a number
+    else
+    {
+        dataReg = (MSB << 8) | LSB;
+        y = dataReg * range / 32768.0; // ze wzoru na przyspieszenie
+    }
+
+    // Oś X
+    if ((1 != getRegister(LSM6DS3_OUTZ_L_XL, LSB)) ||
+        (1 != getRegister(LSM6DS3_OUTZ_H_XL, MSB)))
+        z = NAN; // blad - not a number
+    else
+    {
+        dataReg = (MSB << 8) | LSB;
+        z = dataReg * range / 32768.0; // ze wzoru na przyspieszenie
+    }
+
+    return 1;
+}
+
 // Metoda szybkiego odczytu pomiaru z akcelerometru - dla predefiniowanych ustawien (?jakich?)
 int LSM6DS3 ::readAccelerationFast(float &x, float &y, float &z)
 {
@@ -90,6 +156,72 @@ int LSM6DS3 ::readAccelerationFast(float &x, float &y, float &z)
     return 1;
 }
 
+// Metoda odczytu pomiaru z zyroskopu (dla dowolnych parametrow)
+int LSM6DS3 ::readAngular(float &x, float &y, float &z)
+{
+    int16_t dataReg;  // bufor na odczytywany rejestr
+    uint8_t MSB, LSB; // bufor na MSB i LSB
+    uint8_t CTRL2_G; // bufor na rejestr CTRL2_G
+    uint16_t range; // zakres pomiarowy
+
+    // Zakres pomiarowy
+    if (1 != getRegister(LSM6DS3_CTRL2_G, CTRL2_G))
+        return -1; // kod bledu
+    else
+    {
+        range = (CTRL2_G & 0x0C) >> 2;
+        switch (range) 
+        {
+            case LSM6DS3_FS_G_250:
+                range = 250;
+                break;
+            case LSM6DS3_FS_G_500:
+                range = 500;
+                break;
+            case LSM6DS3_FS_G_1000:
+                range = 1000;
+                break;
+            case LSM6DS3_FS_G_2000:
+                range = 2000;
+                break;
+            default:
+                break;
+        }
+    }
+
+    // Oś X
+    if ((1 != getRegister(LSM6DS3_OUTX_L_G, LSB)) ||
+        (1 != getRegister(LSM6DS3_OUTX_H_G, MSB)))
+        x = NAN; // blad - not a number
+    else
+    {
+        dataReg = (MSB << 8) | LSB;
+        x = dataReg * range / 32768.0; // ze wzoru na przyspieszenie katowe
+    }
+
+    // Oś Y
+    if ((1 != getRegister(LSM6DS3_OUTY_L_G, LSB)) ||
+        (1 != getRegister(LSM6DS3_OUTY_H_G, MSB)))
+        y = NAN; // blad - not a number
+    else
+    {
+        dataReg = (MSB << 8) | LSB;
+        y = dataReg * range / 32768.0; // ze wzoru na przyspieszenie katowe
+    }
+
+    // Oś Z
+    if ((1 != getRegister(LSM6DS3_OUTZ_L_G, LSB)) ||
+        (1 != getRegister(LSM6DS3_OUTZ_H_G, MSB)))
+        z = NAN; // blad - not a number
+    else
+    {
+        dataReg = (MSB << 8) | LSB;
+        z = dataReg * range / 32768.0; // ze wzoru na przyspieszenie katowe
+    }
+
+    return 1;
+}
+
 // Metoda szybkiego odczytu pomiaru z zyroskopu - dla predefiniowanych ustawien (?jakich?)
 int LSM6DS3 ::readAngularFast(float &x, float &y, float &z)
 {
@@ -116,7 +248,7 @@ int LSM6DS3 ::readAngularFast(float &x, float &y, float &z)
         y = dataReg * 2000.0 / 32768.0; // ze wzoru na przyspieszenie katowe
     }
 
-    // Oś X
+    // Oś Z
     if ((1 != getRegister(LSM6DS3_OUTZ_L_G, LSB)) ||
         (1 != getRegister(LSM6DS3_OUTZ_H_G, MSB)))
         z = NAN; // blad - not a number

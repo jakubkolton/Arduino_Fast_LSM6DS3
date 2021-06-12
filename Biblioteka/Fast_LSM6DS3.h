@@ -178,9 +178,6 @@ const uint8_t LSM6DS3_RESERVED[] = {0x00, 0x02, 0x03, 0x05, 0xDC, 0x1F};
 
 
 
-
-
-
 class LSM6DS3
 {
     public:    
@@ -206,11 +203,13 @@ class LSM6DS3
         int readRegister (uint8_t addr);
 
         // Metoda odczytu pomiaru z akcelerometru (dla dowolnych parametrow)
+        int readAcceleration (float &x, float &y, float &z);
 
         // Metoda szybkiego odczytu pomiaru z akcelerometru - dla predefiniowanych ustawien (?jakich?)
         int readAccelerationFast (float &x, float &y, float &z);
 
         // Metoda odczytu pomiaru z zyroskopu (dla dowolnych parametrow)
+        int readAngular(float &x, float &y, float &z);
         
         // Metoda szybkiego odczytu pomiaru z zyroskopu - dla predefiniowanych ustawien (?jakich?)
         int readAngularFast(float &x, float &y, float &z);
@@ -242,7 +241,6 @@ class LSM6DS3
         int setScale_G(uint8_t value);
 
 
-    
     private:
 
         TwoWire* I2C; // uchwyt do struktury I2C
@@ -255,8 +253,6 @@ class LSM6DS3
         int writeRegisterFast (uint8_t addr, uint8_t value);
 
 };
-
-
 
 
 #endif
