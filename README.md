@@ -5,7 +5,13 @@
 Projekt biblioteki do obsługi akcelerometru LSM6DS3 (wbudowanego w Arduino Nano 33) z pomocą interfejsu I2C.
 
 ## Funkcjonalności biblioteki:
-- // UZUPEŁNIĆ
+- Biblioteka pozwala na wykonanie pomiarów z akcelerometru, żyroskopu i termometru
+- Stałe predefiniujące adresy rejestrów i fragmenty ich wartości, ułatwiające konfigurację.
+- Dostęp do rejestrów wbudowanych w LSM6DS3 - możliwość ich odczytu i zapisu.
+- Inicjacja - domyślna lub z zadanymi parametrami. Wyłączanie IMU.
+- Metody ułatwiające ustawianie wybranych parametrów LSM6DS3.
+- Metody do odczytu pomiarów - przyspieszenia liniowego, kątowego i temperatury.
+- Większość metod odczytu i zapisu posiada wersję standardową i szybką (z dopiskiem Fast) pozwalającą na szybkie prototypowanie oraz wykonanie kodu. Metod standardowych można używać w każdych warunkach, często pozwalają one np. na ustawianie konkretnych parametrów LSM6DS3. Natomiast użycie metod szybkich zalecane jest tylko, gdy użytkownikowi zależy na szybkich pomiarach - bez samodzielnej konfiguracji parametrów układu.
 
 ### Poprawna praca akcelerometru (na moim biurku):
 - Płytka leży na stole: X =  0; Y =  0; Z =  1.
@@ -24,13 +30,13 @@ Projekt biblioteki do obsługi akcelerometru LSM6DS3 (wbudowanego w Arduino Nano
 - Autorska obsługa akcelerometru:
     - Funkcja inicjująca akcelerometr z wybranymi parametrami.
     - Wyodrębnienie funkcji uniwersalnych i domyślnych funkcji szybkich (z małą kontrolą użytkownika, ale szybkim wykonaniem kodu).
-    - Przygotowanie przykładowych programów wykorzystujących bibliotekę.
+    - Przygotowanie przykładowych programów wykorzystujących bibliotekę (folder Examples).
     - // DOKONCZYC N/W
 
 - Planowane rozszerzenia:  
     - Instrukcja obsługi biblioteki.
     - Dokumentacja z wykorzystaniem Doxygen.
-    - Porównanie szybkości biblioteki z "konkurencyjnymi" z GitHuba.
+
 
 #### v 5.0:
 - Autorska obsługa akcelerometru:
@@ -53,7 +59,3 @@ Projekt biblioteki do obsługi akcelerometru LSM6DS3 (wbudowanego w Arduino Nano
     - Domyślna inicjalizacja akcelerometru (predefiniowane ustawienia).
     - Funkcje wpisu i odczytu z rejestrów.
     - Zebranie pomiarów przyspieszenia.
-
-#### v 1.0:
-- Pierwsza wersja programu.
-- Uruchomienie cudzej biblioteki w celu sprawdzenia poprawności pracy peryferiów, programatora itp.

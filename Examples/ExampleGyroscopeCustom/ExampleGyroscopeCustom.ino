@@ -1,3 +1,11 @@
+/*
+    Author: Jakub Kolton
+
+    Fast_LSM6DS3 - Library for LSM6DS3, IMU built-in Arduino Nano 33 IoT
+
+    Latest version: https://github.com/jakubkolton/Arduino_Fast_LSM6DS3
+*/
+
 #include "Fast_LSM6DS3.h"
 
 LSM6DS3 LSM(Wire, LSM6DS3_I2C_ADDRESS_DEFAULT); // obiekt akcelerometru

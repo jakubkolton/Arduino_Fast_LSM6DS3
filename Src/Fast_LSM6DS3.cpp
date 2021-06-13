@@ -1,3 +1,11 @@
+/*
+    Author: Jakub Kolton
+
+    Fast_LSM6DS3 - Library for LSM6DS3, IMU built-in Arduino Nano 33 IoT
+
+    Latest version: https://github.com/jakubkolton/Arduino_Fast_LSM6DS3
+*/
+
 #include "Fast_LSM6DS3.h"
 
 // Konstruktor obiektu akcelerometru
@@ -118,7 +126,7 @@ int LSM6DS3 ::readAcceleration(float &x, float &y, float &z)
     return 1;
 }
 
-// Metoda szybkiego odczytu pomiaru z akcelerometru - dla predefiniowanych ustawien (?jakich?)
+// Metoda szybkiego odczytu pomiaru z akcelerometru - dla domyslnych ustawien
 int LSM6DS3 ::readAccelerationFast(float &x, float &y, float &z)
 {
     int16_t dataReg;  // bufor na odczytywany rejestr
@@ -428,7 +436,7 @@ int LSM6DS3 ::setScale_G(uint8_t value)
 }
 
 
-// Inicjacja akcelerometru - domyslna, najprostsza
+// Inicjacja akcelerometru - z domyslnymi parametrami
 int LSM6DS3 ::beginFast()
 {
     I2C->begin(); // dolaczenie sie do magistrali I2C
