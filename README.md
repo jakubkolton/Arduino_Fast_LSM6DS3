@@ -26,8 +26,7 @@ Projekt biblioteki do obsługi akcelerometru LSM6DS3 (wbudowanego w Arduino Nano
     - Wyodrębnienie funkcji uniwersalnych i domyślnych funkcji szybkich (z małą kontrolą użytkownika, ale szybkim wykonaniem kodu).
     - Przygotowanie przykładowych programów wykorzystujących bibliotekę.
     - // DOKONCZYC N/W
-    - // UPORZADKOWAC PLIKI .C, .H, .INO
-    - // POSZUKAC CZY WARTO SPRAWDZAC JESZCZE CO ZWRACAJA DANE FUNKCJE, MOZE GDZIES NIE ZABEZPIECZYLEM PROGRAMU
+
 - Planowane rozszerzenia:  
     - Instrukcja obsługi biblioteki.
     - Dokumentacja z wykorzystaniem Doxygen.

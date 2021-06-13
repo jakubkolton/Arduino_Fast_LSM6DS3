@@ -440,19 +440,29 @@ int LSM6DS3 ::beginFast()
         return -1; // przerwanie procedury
     }
 
-    // Sztywne ustawienie parametrow zyroskopu - 104 Hz, 2000 dps, tryb Bypass
-    //if (-1 == 
-    writeRegisterFast(LSM6DS3_CTRL2_G, 0x4C);
-        
-
     // Sztywne ustawienie parametrow akcelerometru - 104 Hz, 4g, tryb Bypass, ODR/4 (filtr dolnoprz.)
-    writeRegisterFast(LSM6DS3_CTRL1_XL, 0x4A);
+    if (-1 ==writeRegisterFast(LSM6DS3_CTRL1_XL, 0x4A))
+    {
+        return -1; // przerwanie procedury
+    }
+
+    // Sztywne ustawienie parametrow zyroskopu - 104 Hz, 2000 dps, tryb Bypass
+    if (-1 == writeRegisterFast(LSM6DS3_CTRL2_G, 0x4C))
+    {
+        return -1; // przerwanie procedury
+    }
 
     // Sztywne ustawienie parametrow zyroskopu - tryb High Performance, pasmo 16 MHz
-    writeRegisterFast(LSM6DS3_CTRL7_G, 0x00);
+    if (-1 == writeRegisterFast(LSM6DS3_CTRL7_G, 0x00))
+    {
+        return -1; // przerwanie procedury
+    }
 
     // Sztywne ustawienie parametrow akcelerometru - ODR/4
-    writeRegisterFast(LSM6DS3_CTRL8_XL, 0x09);
+    if (-1 == writeRegisterFast(LSM6DS3_CTRL8_XL, 0x09))
+    {
+        return -1; // przerwanie procedury
+    }
 
     return 1;
 }
@@ -471,30 +481,40 @@ int LSM6DS3 ::begin(uint8_t ODR_XL, uint8_t FS_XL, uint8_t BW_XL, uint8_t ODR_G,
     // Sprawdzenie obecnosci akcelerometru na magistrali
     if (0x69 != readRegister(LSM6DS3_WHO_AM_I))
     {
-        // end();     // zakonczenie akcelerometru
         return -1; // przerwanie procedury
     }
-
-    // Przygotowanie parametrow zyroskopu
-    uint8_t CTRL2_G;
-    CTRL2_G = (ODR_G << 4) | (FS_G << 2);
 
     // Przygotowanie parametrow akcelerometru
     uint8_t CTRL1_XL;
     CTRL1_XL = (ODR_XL << 4) | (FS_XL << 2) | (BW_XL);
 
-
-    // ustawienie parametrow zyroskopu
-    writeRegisterFast(LSM6DS3_CTRL2_G, CTRL2_G);
+    // Przygotowanie parametrow zyroskopu
+    uint8_t CTRL2_G;
+    CTRL2_G = (ODR_G << 4) | (FS_G << 2);
 
     // ustawienie parametrow akcelerometru
-    writeRegisterFast(LSM6DS3_CTRL1_XL, CTRL1_XL);
+    if (-1 == writeRegisterFast(LSM6DS3_CTRL1_XL, CTRL1_XL))
+    {
+        return -1;
+    }
+
+    // ustawienie parametrow zyroskopu
+    if (-1 == writeRegisterFast(LSM6DS3_CTRL2_G, CTRL2_G))
+    {
+        return -1;
+    }
 
     // Sztywne ustawienie parametrow zyroskopu - tryb High Performance, pasmo 16 MHz
-    writeRegisterFast(LSM6DS3_CTRL7_G, 0x00);
+    if (-1 == writeRegisterFast(LSM6DS3_CTRL7_G, 0x00))
+    {
+        return -1;
+    }
 
     // Sztywne ustawienie parametrow akcelerometru - ODR/4
-    writeRegisterFast(LSM6DS3_CTRL8_XL, 0x09);
+    if (-1 == writeRegisterFast(LSM6DS3_CTRL8_XL, 0x09))
+    {
+        return -1;
+    }
 
     return 1;
 }
@@ -502,8 +522,8 @@ int LSM6DS3 ::begin(uint8_t ODR_XL, uint8_t FS_XL, uint8_t BW_XL, uint8_t ODR_G,
 // Wylaczenie akcelerometru
 void LSM6DS3 ::end()
 {
-    writeRegisterFast(LSM6DS3_CTRL2_G, 0x00);  // Wylacza zyroskop
     writeRegisterFast(LSM6DS3_CTRL1_XL, 0x00); // Wylacza akcelerometr
+    writeRegisterFast(LSM6DS3_CTRL2_G, 0x00);  // Wylacza zyroskop
 
     I2C->end(); // konczy obiekt SPI
 }
