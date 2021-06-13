@@ -2,13 +2,14 @@
 
 LSM6DS3 LSM(Wire, LSM6DS3_I2C_ADDRESS_DEFAULT); // obiekt akcelerometru
 
-void setup() {
-  // Konfiguracja akcelerometru i przesylania pomiarow przez UART
+void setup() 
+{
+  // Konfiguracja UART (do przesylania pomiarow i komunikatow)
   Serial.begin(9600);
   while (!Serial); // czeka az bedzie polaczenie przez UART
 
 
-  // Inicjalizacja akcelerometru
+  // Inicjalizacja akcelerometru z domyslnymi parametrami
   while (-1 == LSM.beginFast())
   {
     Serial.println("Blad inicjalizacji akcelerometru!");
@@ -22,9 +23,9 @@ void setup() {
 
 void loop()
 {
-  // Pomiary temperatury
-  float T;
+  float T; // temperatura
 
+  // Pomiary temperatury
   LSM.readTemperature(T);
   Serial.print(T);
   Serial.print("*C");

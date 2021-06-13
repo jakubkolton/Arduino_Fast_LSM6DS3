@@ -3,20 +3,20 @@
 LSM6DS3 LSM(Wire, LSM6DS3_I2C_ADDRESS_DEFAULT); // obiekt akcelerometru
 
 void setup() {
-  // Konfiguracja akcelerometru i przesylania pomiarow przez UART
+  // Konfiguracja UART (do przesylania pomiarow i komunikatow)
   Serial.begin(9600);
   while (!Serial); // czeka az bedzie polaczenie przez UART
 
 
-  // Inicjalizacja akcelerometru z zadanymi parametrami
+  // Inicjalizacja akcelerometru z zadanymi parametrami (104 Hz, 4g, filtr antyaliasingowy 100 Hz; 104 Hz, 2000 dps) 
   while (-1 == LSM.begin(LSM6DS3_ODR_XL_104, LSM6DS3_FS_XL_4, LSM6DS3_BW_XL_100, LSM6DS3_ODR_G_104, LSM6DS3_FS_G_2000))
   {
     Serial.println("Blad inicjalizacji akcelerometru!");
 
-    delay(1000); // Pomyslec o liczniku programowym
+    delay(1000);
   }
 
-  // Formatowanie wynikow pomiaru przyspieszenia
+  // Formatowanie wynikow pomiarow
   Serial.println("Przyspieszenie w jednostkach g = 9,81 m/s^2:\r\nX: \t Y: \t Z:");
   Serial.println("Przyspieszenie katowe w jednostkach */sekunde:\r\nX: \t Y: \t Z:");
   Serial.println("Temperatura w jednostkach *C:");
@@ -54,5 +54,5 @@ void loop()
   Serial.print(T);
   Serial.print("*C\n\r\n\r");
 
-  delay(1500); // Pomyslec o liczniku programowym albo przerwaniu
+  delay(1500); 
 }

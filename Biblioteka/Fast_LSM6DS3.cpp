@@ -13,6 +13,7 @@ LSM6DS3 ::~LSM6DS3()
     // C++ sam niszczy obiekt
 }
 
+
 // Metoda czytania rejestru 1-bajtowego do zmiennej
 int LSM6DS3 ::getRegister(uint8_t addr, uint8_t &data)
 {
@@ -280,23 +281,7 @@ int LSM6DS3 ::readTemperature(float &x)
     return 1;
 }
 
-// Funkcja szybkiego zapisu do rejestru (wpisywane jest chyba tylko do 1-bajtowych)
-int LSM6DS3 ::writeRegisterFast(uint8_t addr, uint8_t value)
-{
-    I2C->beginTransmission(I2C_Address); // rozpoczecie transmisji w kierunku Slave - wyslanie jego adresu + bitu Write
-    I2C->write(addr);                    // wyslanie adresu rejestru
-    I2C->write(value);                   // wyslanie wartosci w ramce
-
-    // Obsluga bledu transmisji
-    if (0 != I2C->endTransmission())
-    {
-        return -1; // kod bledu
-    }
-
-    return 1; // kod poprawnego wykonania
-}
-
-// // Funkcja zapisu do "bezpiecznego" rejestru (wpisywane jest chyba tylko do 1-bajtowych)
+// Metoda zapisu do "bezpiecznego" rejestru
 int LSM6DS3 ::writeRegister(uint8_t addr, uint8_t value)
 {
     // Sprawdzenie rejestrow zarezerwowanych
@@ -313,6 +298,22 @@ int LSM6DS3 ::writeRegister(uint8_t addr, uint8_t value)
         return -2; // kod bledu - adres zarezerwowany
     }
 
+    I2C->beginTransmission(I2C_Address); // rozpoczecie transmisji w kierunku Slave - wyslanie jego adresu + bitu Write
+    I2C->write(addr);                    // wyslanie adresu rejestru
+    I2C->write(value);                   // wyslanie wartosci w ramce
+
+    // Obsluga bledu transmisji
+    if (0 != I2C->endTransmission())
+    {
+        return -1; // kod bledu
+    }
+
+    return 1; // kod poprawnego wykonania
+}
+
+// Metoda szybkiego zapisu do rejestru
+int LSM6DS3 ::writeRegisterFast(uint8_t addr, uint8_t value)
+{
     I2C->beginTransmission(I2C_Address); // rozpoczecie transmisji w kierunku Slave - wyslanie jego adresu + bitu Write
     I2C->write(addr);                    // wyslanie adresu rejestru
     I2C->write(value);                   // wyslanie wartosci w ramce
@@ -426,6 +427,7 @@ int LSM6DS3 ::setScale_G(uint8_t value)
     return 1; // kod poprawnego wykonania
 }
 
+
 // Inicjacja akcelerometru - domyslna, najprostsza
 int LSM6DS3 ::beginFast()
 {
@@ -439,7 +441,8 @@ int LSM6DS3 ::beginFast()
     }
 
     // Sztywne ustawienie parametrow zyroskopu - 104 Hz, 2000 dps, tryb Bypass
-    if (-1 == writeRegisterFast(LSM6DS3_CTRL2_G, 0x4C))
+    //if (-1 == 
+    writeRegisterFast(LSM6DS3_CTRL2_G, 0x4C);
         
 
     // Sztywne ustawienie parametrow akcelerometru - 104 Hz, 4g, tryb Bypass, ODR/4 (filtr dolnoprz.)

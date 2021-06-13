@@ -3,7 +3,7 @@
 LSM6DS3 LSM(Wire, LSM6DS3_I2C_ADDRESS_DEFAULT); // obiekt akcelerometru
 
 void setup() {
-  // Konfiguracja akcelerometru i przesylania pomiarow przez UART
+  // Konfiguracja UART (do przesylania pomiarow i komunikatow)
   Serial.begin(9600);
   while (!Serial); // czeka az bedzie polaczenie przez UART
 
@@ -13,7 +13,7 @@ void setup() {
   {
     Serial.println("Blad inicjalizacji akcelerometru!");
 
-    delay(1000); // Pomyslec o liczniku programowym
+    delay(1000);
   }
 
   // Ustawienie zadanych parametrow akcelerometru

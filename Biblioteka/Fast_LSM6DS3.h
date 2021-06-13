@@ -189,16 +189,6 @@ class LSM6DS3
         ~LSM6DS3();
 
 
-        // Inicjacja akcelerometru - domyslna, najprostsza
-        int beginFast();
-        
-        // Inicjalizacja akcelerometru - z wybranymi parametrami
-        // Paramtery - jak w funkcjach ustawiajacych poszczegolne parametry
-        int begin(uint8_t ODR_XL, uint8_t FS_XL, uint8_t BW_XL, uint8_t ODR_G, uint8_t FS_G);
-
-        // Wylaczenie akcelerometru
-        void end();
-
         // Metoda zwracajaca wartosc rejestru
         int readRegister (uint8_t addr);
 
@@ -217,7 +207,7 @@ class LSM6DS3
         // Metoda (zawsze szybka) odczytu pomiaru z termometru
         int readTemperature(float &x);
 
-        // Funkcja zapisu do "bezpiecznego" rejestru
+        // Metoda zapisu do "bezpiecznego" rejestru
         int writeRegister (uint8_t addr, uint8_t value);
 
         // Ustawienie ODR (czestotliwosci wysylania pomiarow) akcelerometru
@@ -241,6 +231,17 @@ class LSM6DS3
         int setScale_G(uint8_t value);
 
 
+        // Inicjacja akcelerometru - domyslna, najprostsza
+        int beginFast();
+        
+        // Inicjalizacja akcelerometru - z wybranymi parametrami
+        // Paramtery - jak w funkcjach ustawiajacych poszczegolne parametry
+        int begin(uint8_t ODR_XL, uint8_t FS_XL, uint8_t BW_XL, uint8_t ODR_G, uint8_t FS_G);
+
+        // Wylaczenie akcelerometru
+        void end();
+
+
     private:
 
         TwoWire* I2C; // uchwyt do struktury I2C
@@ -249,7 +250,7 @@ class LSM6DS3
         // Metoda czytania rejestru 1-bajtowego do zmiennej
         int getRegister (uint8_t addr, uint8_t &data);
 
-        // Funkcja szybkiego zapisu do rejestru
+        // Metoda szybkiego zapisu do rejestru
         int writeRegisterFast (uint8_t addr, uint8_t value);
 
 };
