@@ -31,18 +31,17 @@ Projekt biblioteki do obsługi akcelerometru LSM6DS3 (wbudowanego w Arduino Nano
     - Funkcja inicjująca akcelerometr z wybranymi parametrami.
     - Wyodrębnienie funkcji uniwersalnych i domyślnych funkcji szybkich (z małą kontrolą użytkownika, ale szybkim wykonaniem kodu).
     - Przygotowanie przykładowych programów wykorzystujących bibliotekę (folder Examples).
-    - // DOKONCZYC N/W
+    - Instrukcja obsługi biblioteki.
 
 - Planowane rozszerzenia:  
-    - Instrukcja obsługi biblioteki.
+    - Usprawnienie działania I2C.
     - Dokumentacja z wykorzystaniem Doxygen.
 
 
 #### v 5.0:
 - Autorska obsługa akcelerometru:
-    - Stałe predefiniujące różne parametry (częstotliwość, zakres pomiarowy itp.).
+    - Stałe predefiniujące różne parametry (częstotliwość, zakres pomiarowy itp).
     - Funkcje ustawiające parametry akcelerometru i żyroskopu (częstotliwość próbkowania, zakres pomiarowy itp.).
-
 
 #### v 4.0:
 - Autorska obsługa akcelerometru:
