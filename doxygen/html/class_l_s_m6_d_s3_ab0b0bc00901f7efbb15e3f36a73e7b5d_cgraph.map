@@ -1,0 +1,4 @@
+<map id="LSM6DS3::setFreq_XL" name="LSM6DS3::setFreq_XL">
+<area shape="rect" id="node1" title="Ustawienie ODR (czestotliwosci wysylania pomiarow) akcelerometru." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$class_l_s_m6_d_s3.html#a1443f388a1d9b351df38d8fe4f0e6a26" title="Metoda zwracajaca wartosc rejestru." alt="" coords="208,5,371,32"/>
+</map>

@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Fast_LSM6DS3: Dokumentacja pliku Fast_LSM6DS3.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Fast_LSM6DS3
+   &#160;<span id="projectnumber">6.0</span>
+   </div>
+   <div id="projectbrief">Projekt biblioteki do obsługi akcelerometru LSM6DS3 (wbudowanego w Arduino Nano 33) z pomocą interfejsu I2C.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_fast___l_s_m6_d_s3_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Komponenty</a> &#124;
+<a href="#define-members">Definicje</a> &#124;
+<a href="#var-members">Zmienne</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku Fast_LSM6DS3.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Główny plik nagłówkowy.  
+<a href="#details">Więcej...</a></p>
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+<code>#include &lt;Wire.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Wykres zależności załączania dla Fast_LSM6DS3.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="_fast___l_s_m6_d_s3_8h__incl.png" border="0" usemap="#a_fast___l_s_m6_d_s3_8h" alt=""/></div>
+<map name="a_fast___l_s_m6_d_s3_8h" id="a_fast___l_s_m6_d_s3_8h">
+<area shape="rect" title="Główny plik nagłówkowy." alt="" coords="28,5,153,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,83,107"/>
+<area shape="rect" title=" " alt="" coords="107,80,167,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
+<div class="dyncontent">
+<div class="center"><img src="_fast___l_s_m6_d_s3_8h__dep__incl.png" border="0" usemap="#a_fast___l_s_m6_d_s3_8hdep" alt=""/></div>
+<map name="a_fast___l_s_m6_d_s3_8hdep" id="a_fast___l_s_m6_d_s3_8hdep">
+<area shape="rect" title="Główny plik nagłówkowy." alt="" coords="12,5,137,32"/>
+<area shape="rect" href="_fast___l_s_m6_d_s3_8cpp.html" title="Główny plik źródłowy." alt="" coords="5,80,144,107"/>
+</map>
+</div>
+</div>
+<p><a href="_fast___l_s_m6_d_s3_8h_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Komponenty</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_s_m6_d_s3.html">LSM6DS3</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:a0ee2f2603dca79a88d9e131d3cc294c4"><td class="memItemLeft" align="right" valign="top"><a id="a0ee2f2603dca79a88d9e131d3cc294c4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_fast___l_s_m6_d_s3_8h.html#a0ee2f2603dca79a88d9e131d3cc294c4">LSM6DS3_I2C_ADDRESS_DEFAULT</a>&#160;&#160;&#160;0x6A</td></tr>
+<tr class="memdesc:a0ee2f2603dca79a88d9e131d3cc294c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Domyślny adres I2C akcelerometru. <br /></td></tr>
+<tr class="separator:a0ee2f2603dca79a88d9e131d3cc294c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd886335b93fe665820107d0b0e6cbe6"><td class="memItemLeft" align="right" valign="top"><a id="abd886335b93fe665820107d0b0e6cbe6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FUNC_CFG_ACCESS</b>&#160;&#160;&#160;0x01</td></tr>
+<tr class="separator:abd886335b93fe665820107d0b0e6cbe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530f51dc38ab67fa6784154b97d2ad54"><td class="memItemLeft" align="right" valign="top"><a id="a530f51dc38ab67fa6784154b97d2ad54"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSOR_SYNC_TIME_FRAME</b>&#160;&#160;&#160;0x04</td></tr>
+<tr class="separator:a530f51dc38ab67fa6784154b97d2ad54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b0337e3604fb55fc94dd0a2811bf66e"><td class="memItemLeft" align="right" valign="top"><a id="a0b0337e3604fb55fc94dd0a2811bf66e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FIFO_CTRL1</b>&#160;&#160;&#160;0x06</td></tr>
+<tr class="separator:a0b0337e3604fb55fc94dd0a2811bf66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4005e6d05bebd81b172a0f1a504dda59"><td class="memItemLeft" align="right" valign="top"><a id="a4005e6d05bebd81b172a0f1a504dda59"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FIFO_CTRL2</b>&#160;&#160;&#160;0x07</td></tr>
+<tr class="separator:a4005e6d05bebd81b172a0f1a504dda59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99c7663775aad108aaf65c0fc058ad7b"><td class="memItemLeft" align="right" valign="top"><a id="a99c7663775aad108aaf65c0fc058ad7b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FIFO_CTRL3</b>&#160;&#160;&#160;0x08</td></tr>
+<tr class="separator:a99c7663775aad108aaf65c0fc058ad7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2e68b33e2af2c3257e5ef8c099fd146"><td class="memItemLeft" align="right" valign="top"><a id="af2e68b33e2af2c3257e5ef8c099fd146"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FIFO_CTRL4</b>&#160;&#160;&#160;0x09</td></tr>
+<tr class="separator:af2e68b33e2af2c3257e5ef8c099fd146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f58bbe43764493fd5783d139fee7e55"><td class="memItemLeft" align="right" valign="top"><a id="a8f58bbe43764493fd5783d139fee7e55"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FIFO_CTRL5</b>&#160;&#160;&#160;0x0A</td></tr>
+<tr class="separator:a8f58bbe43764493fd5783d139fee7e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a528b333fdc50f2645c5238386c9e920c"><td class="memItemLeft" align="right" valign="top"><a id="a528b333fdc50f2645c5238386c9e920c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ORIENT_CFG_G</b>&#160;&#160;&#160;0x0B</td></tr>
+<tr class="separator:a528b333fdc50f2645c5238386c9e920c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c545c87d3ab57437993ab3b5e8ff392"><td class="memItemLeft" align="right" valign="top"><a id="a9c545c87d3ab57437993ab3b5e8ff392"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_INT1_CTRL</b>&#160;&#160;&#160;0x0D</td></tr>
+<tr class="separator:a9c545c87d3ab57437993ab3b5e8ff392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8a7b241546f260dbe62e1f1f90762c"><td class="memItemLeft" align="right" valign="top"><a id="acc8a7b241546f260dbe62e1f1f90762c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_INT2_CTRL</b>&#160;&#160;&#160;0x0E</td></tr>
+<tr class="separator:acc8a7b241546f260dbe62e1f1f90762c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad118f78b3f809c4fde08de1badee7fdc"><td class="memItemLeft" align="right" valign="top"><a id="ad118f78b3f809c4fde08de1badee7fdc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_WHO_AM_I</b>&#160;&#160;&#160;0x0F</td></tr>
+<tr class="separator:ad118f78b3f809c4fde08de1badee7fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c481453f5e8b134b2e5b92dc9bb5839"><td class="memItemLeft" align="right" valign="top"><a id="a9c481453f5e8b134b2e5b92dc9bb5839"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_CTRL1_XL</b>&#160;&#160;&#160;0x10</td></tr>
+<tr class="separator:a9c481453f5e8b134b2e5b92dc9bb5839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a93e2ea63755b3067663dfa0541cf71"><td class="memItemLeft" align="right" valign="top"><a id="a1a93e2ea63755b3067663dfa0541cf71"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_CTRL2_G</b>&#160;&#160;&#160;0x11</td></tr>
+<tr class="separator:a1a93e2ea63755b3067663dfa0541cf71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50e095ffc73b436a46e681a99ee4f1cd"><td class="memItemLeft" align="right" valign="top"><a id="a50e095ffc73b436a46e681a99ee4f1cd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_CTRL3_C</b>&#160;&#160;&#160;0x12</td></tr>
+<tr class="separator:a50e095ffc73b436a46e681a99ee4f1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a581c8e70314e62e6a9ad45289424ba50"><td class="memItemLeft" align="right" valign="top"><a id="a581c8e70314e62e6a9ad45289424ba50"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_CTRL4_C</b>&#160;&#160;&#160;0x13</td></tr>
+<tr class="separator:a581c8e70314e62e6a9ad45289424ba50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9beb92403ccb9f65e5880a7fee68e7f4"><td class="memItemLeft" align="right" valign="top"><a id="a9beb92403ccb9f65e5880a7fee68e7f4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_CTRL5_C</b>&#160;&#160;&#160;0x14</td></tr>
+<tr class="separator:a9beb92403ccb9f65e5880a7fee68e7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32bf044319fcba6020c5dee32faa42ec"><td class="memItemLeft" align="right" valign="top"><a id="a32bf044319fcba6020c5dee32faa42ec"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_CTRL6_C</b>&#160;&#160;&#160;0x15</td></tr>
+<tr class="separator:a32bf044319fcba6020c5dee32faa42ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ef29d56804b6d9c0962f935b566046"><td class="memItemLeft" align="right" valign="top"><a id="a31ef29d56804b6d9c0962f935b566046"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_CTRL7_G</b>&#160;&#160;&#160;0x16</td></tr>
+<tr class="separator:a31ef29d56804b6d9c0962f935b566046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab19466168a97972feb933035851cfd25"><td class="memItemLeft" align="right" valign="top"><a id="ab19466168a97972feb933035851cfd25"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_CTRL8_XL</b>&#160;&#160;&#160;0x17</td></tr>
+<tr class="separator:ab19466168a97972feb933035851cfd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaa9db8ed1dc0c905ca197f92899ae3f"><td class="memItemLeft" align="right" valign="top"><a id="afaa9db8ed1dc0c905ca197f92899ae3f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_CTRL9_XL</b>&#160;&#160;&#160;0x18</td></tr>
+<tr class="separator:afaa9db8ed1dc0c905ca197f92899ae3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f2c833ae086ead93327247d61278ca8"><td class="memItemLeft" align="right" valign="top"><a id="a1f2c833ae086ead93327247d61278ca8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_CTRL10_C</b>&#160;&#160;&#160;0x19</td></tr>
+<tr class="separator:a1f2c833ae086ead93327247d61278ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08200b71f42f11e6a6795076540496ae"><td class="memItemLeft" align="right" valign="top"><a id="a08200b71f42f11e6a6795076540496ae"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MASTER_CONFIG</b>&#160;&#160;&#160;0x1A</td></tr>
+<tr class="separator:a08200b71f42f11e6a6795076540496ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f2db8e7c4911658bab97a73849af149"><td class="memItemLeft" align="right" valign="top"><a id="a4f2db8e7c4911658bab97a73849af149"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_WAKE_UP_SRC</b>&#160;&#160;&#160;0x1B</td></tr>
+<tr class="separator:a4f2db8e7c4911658bab97a73849af149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f862e7702f33e5df9c3f625e6984862"><td class="memItemLeft" align="right" valign="top"><a id="a2f862e7702f33e5df9c3f625e6984862"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_TAP_SRC</b>&#160;&#160;&#160;0x1C</td></tr>
+<tr class="separator:a2f862e7702f33e5df9c3f625e6984862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69a41bfe0ad88a16055f15b4f9193744"><td class="memItemLeft" align="right" valign="top"><a id="a69a41bfe0ad88a16055f15b4f9193744"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_D6D_SRC</b>&#160;&#160;&#160;0x1D</td></tr>
+<tr class="separator:a69a41bfe0ad88a16055f15b4f9193744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4003b1ab3aec1d6163fae75686d6feb"><td class="memItemLeft" align="right" valign="top"><a id="ab4003b1ab3aec1d6163fae75686d6feb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_STATUS_REG</b>&#160;&#160;&#160;0x1E</td></tr>
+<tr class="separator:ab4003b1ab3aec1d6163fae75686d6feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c2ad9ff805defc01a9fad5788af70fb"><td class="memItemLeft" align="right" valign="top"><a id="a6c2ad9ff805defc01a9fad5788af70fb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUT_TEMP_L</b>&#160;&#160;&#160;0x20</td></tr>
+<tr class="separator:a6c2ad9ff805defc01a9fad5788af70fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d9f2a0ef69f0422ca33df015000e8e1"><td class="memItemLeft" align="right" valign="top"><a id="a7d9f2a0ef69f0422ca33df015000e8e1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUT_TEMP_H</b>&#160;&#160;&#160;0x21</td></tr>
+<tr class="separator:a7d9f2a0ef69f0422ca33df015000e8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831f871f3b084e0f2c8dd8b8d31e1793"><td class="memItemLeft" align="right" valign="top"><a id="a831f871f3b084e0f2c8dd8b8d31e1793"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTX_L_G</b>&#160;&#160;&#160;0x22</td></tr>
+<tr class="separator:a831f871f3b084e0f2c8dd8b8d31e1793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d8491ca93636e2fad24063a5ee7c47"><td class="memItemLeft" align="right" valign="top"><a id="a64d8491ca93636e2fad24063a5ee7c47"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTX_H_G</b>&#160;&#160;&#160;0x23</td></tr>
+<tr class="separator:a64d8491ca93636e2fad24063a5ee7c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4db908e72c8238bc84c3cfa713a216"><td class="memItemLeft" align="right" valign="top"><a id="adb4db908e72c8238bc84c3cfa713a216"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTY_L_G</b>&#160;&#160;&#160;0x24</td></tr>
+<tr class="separator:adb4db908e72c8238bc84c3cfa713a216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e137ef1f11dfbdcd7b5cd97029f46df"><td class="memItemLeft" align="right" valign="top"><a id="a2e137ef1f11dfbdcd7b5cd97029f46df"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTY_H_G</b>&#160;&#160;&#160;0x25</td></tr>
+<tr class="separator:a2e137ef1f11dfbdcd7b5cd97029f46df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc673a23d6adb7bebb3e93b9e1bc0f7e"><td class="memItemLeft" align="right" valign="top"><a id="adc673a23d6adb7bebb3e93b9e1bc0f7e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTZ_L_G</b>&#160;&#160;&#160;0x26</td></tr>
+<tr class="separator:adc673a23d6adb7bebb3e93b9e1bc0f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2765515a6599f5ec286a0af9c52709d8"><td class="memItemLeft" align="right" valign="top"><a id="a2765515a6599f5ec286a0af9c52709d8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTZ_H_G</b>&#160;&#160;&#160;0x27</td></tr>
+<tr class="separator:a2765515a6599f5ec286a0af9c52709d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27bc81e76789b2907817b795f769d77"><td class="memItemLeft" align="right" valign="top"><a id="ad27bc81e76789b2907817b795f769d77"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTX_L_XL</b>&#160;&#160;&#160;0x28</td></tr>
+<tr class="separator:ad27bc81e76789b2907817b795f769d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab92d87e9e86fd6ce1d9d90b97b8c0bc3"><td class="memItemLeft" align="right" valign="top"><a id="ab92d87e9e86fd6ce1d9d90b97b8c0bc3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTX_H_XL</b>&#160;&#160;&#160;0x29</td></tr>
+<tr class="separator:ab92d87e9e86fd6ce1d9d90b97b8c0bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9158eb8c553ec39ebdc7b37e0d5b59e"><td class="memItemLeft" align="right" valign="top"><a id="ac9158eb8c553ec39ebdc7b37e0d5b59e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTY_L_XL</b>&#160;&#160;&#160;0x2A</td></tr>
+<tr class="separator:ac9158eb8c553ec39ebdc7b37e0d5b59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e5b373f44e403417b72db08aa373271"><td class="memItemLeft" align="right" valign="top"><a id="a8e5b373f44e403417b72db08aa373271"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTY_H_XL</b>&#160;&#160;&#160;0x2B</td></tr>
+<tr class="separator:a8e5b373f44e403417b72db08aa373271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83670b09ec75df584c46d21562b80ef7"><td class="memItemLeft" align="right" valign="top"><a id="a83670b09ec75df584c46d21562b80ef7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTZ_L_XL</b>&#160;&#160;&#160;0x2C</td></tr>
+<tr class="separator:a83670b09ec75df584c46d21562b80ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095b96cf629e1c08c012a110bbc704c9"><td class="memItemLeft" align="right" valign="top"><a id="a095b96cf629e1c08c012a110bbc704c9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUTZ_H_XL</b>&#160;&#160;&#160;0x2D</td></tr>
+<tr class="separator:a095b96cf629e1c08c012a110bbc704c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af83d1a51d7717265bbcd015a951190be"><td class="memItemLeft" align="right" valign="top"><a id="af83d1a51d7717265bbcd015a951190be"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB1_REG</b>&#160;&#160;&#160;0x2E</td></tr>
+<tr class="separator:af83d1a51d7717265bbcd015a951190be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80ba8078c9b80648b0d668e4b1cfe9d7"><td class="memItemLeft" align="right" valign="top"><a id="a80ba8078c9b80648b0d668e4b1cfe9d7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB2_REG</b>&#160;&#160;&#160;0x2F</td></tr>
+<tr class="separator:a80ba8078c9b80648b0d668e4b1cfe9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43149fc63c038babc26fa6b8708a22c7"><td class="memItemLeft" align="right" valign="top"><a id="a43149fc63c038babc26fa6b8708a22c7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB3_REG</b>&#160;&#160;&#160;0x30</td></tr>
+<tr class="separator:a43149fc63c038babc26fa6b8708a22c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f51d3ec3fab8471a6b3a7a7de907f0c"><td class="memItemLeft" align="right" valign="top"><a id="a7f51d3ec3fab8471a6b3a7a7de907f0c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB4_REG</b>&#160;&#160;&#160;0x31</td></tr>
+<tr class="separator:a7f51d3ec3fab8471a6b3a7a7de907f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa120131815e631b5851fc9f6660f9b96"><td class="memItemLeft" align="right" valign="top"><a id="aa120131815e631b5851fc9f6660f9b96"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB5_REG</b>&#160;&#160;&#160;0x32</td></tr>
+<tr class="separator:aa120131815e631b5851fc9f6660f9b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52836dfa945e50a01291d5fd0c616163"><td class="memItemLeft" align="right" valign="top"><a id="a52836dfa945e50a01291d5fd0c616163"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB6_REG</b>&#160;&#160;&#160;0x33</td></tr>
+<tr class="separator:a52836dfa945e50a01291d5fd0c616163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a67faf7a69e22c276e946cfc53750ca"><td class="memItemLeft" align="right" valign="top"><a id="a3a67faf7a69e22c276e946cfc53750ca"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB7_REG</b>&#160;&#160;&#160;0x34</td></tr>
+<tr class="separator:a3a67faf7a69e22c276e946cfc53750ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcdae40b5cad5c52368d20aed1b3c677"><td class="memItemLeft" align="right" valign="top"><a id="afcdae40b5cad5c52368d20aed1b3c677"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB8_REG</b>&#160;&#160;&#160;0x35</td></tr>
+<tr class="separator:afcdae40b5cad5c52368d20aed1b3c677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9942913eec7b21ac4ee9b93c0d9c705"><td class="memItemLeft" align="right" valign="top"><a id="ac9942913eec7b21ac4ee9b93c0d9c705"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB9_REG</b>&#160;&#160;&#160;0x36</td></tr>
+<tr class="separator:ac9942913eec7b21ac4ee9b93c0d9c705"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe01349a4ccea258a76e268ec0039c78"><td class="memItemLeft" align="right" valign="top"><a id="abe01349a4ccea258a76e268ec0039c78"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB10_REG</b>&#160;&#160;&#160;0x37</td></tr>
+<tr class="separator:abe01349a4ccea258a76e268ec0039c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63c3fe8021927e7489fc8c7b902405c0"><td class="memItemLeft" align="right" valign="top"><a id="a63c3fe8021927e7489fc8c7b902405c0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB11_REG</b>&#160;&#160;&#160;0x38</td></tr>
+<tr class="separator:a63c3fe8021927e7489fc8c7b902405c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00ff5c3813af37417a2a358d9714fb3d"><td class="memItemLeft" align="right" valign="top"><a id="a00ff5c3813af37417a2a358d9714fb3d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB12_REG</b>&#160;&#160;&#160;0x39</td></tr>
+<tr class="separator:a00ff5c3813af37417a2a358d9714fb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa4f33bc18749af0da6e4881bb607eba"><td class="memItemLeft" align="right" valign="top"><a id="afa4f33bc18749af0da6e4881bb607eba"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FIFO_STATUS1</b>&#160;&#160;&#160;0x3A</td></tr>
+<tr class="separator:afa4f33bc18749af0da6e4881bb607eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3efcce6cd76492e7cf48ce68344a6a44"><td class="memItemLeft" align="right" valign="top"><a id="a3efcce6cd76492e7cf48ce68344a6a44"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FIFO_STATUS2</b>&#160;&#160;&#160;0x4B</td></tr>
+<tr class="separator:a3efcce6cd76492e7cf48ce68344a6a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23399e8f2edc2e102189d477502a850a"><td class="memItemLeft" align="right" valign="top"><a id="a23399e8f2edc2e102189d477502a850a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FIFO_STATUS3</b>&#160;&#160;&#160;0x3C</td></tr>
+<tr class="separator:a23399e8f2edc2e102189d477502a850a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa3068e6037843fc363a5bbec514bf8"><td class="memItemLeft" align="right" valign="top"><a id="a4fa3068e6037843fc363a5bbec514bf8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FIFO_STATUS4</b>&#160;&#160;&#160;0x3D</td></tr>
+<tr class="separator:a4fa3068e6037843fc363a5bbec514bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99f88096798ac955f86c6e88c4b1d07a"><td class="memItemLeft" align="right" valign="top"><a id="a99f88096798ac955f86c6e88c4b1d07a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FIFO_DATA_OUT_L</b>&#160;&#160;&#160;0x3E</td></tr>
+<tr class="separator:a99f88096798ac955f86c6e88c4b1d07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af975b245169383772f6a298e0db29b10"><td class="memItemLeft" align="right" valign="top"><a id="af975b245169383772f6a298e0db29b10"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FIFO_DATA_OUT_H</b>&#160;&#160;&#160;0x3F</td></tr>
+<tr class="separator:af975b245169383772f6a298e0db29b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a345480e30c83415ff1a25c5c7bfc5cd0"><td class="memItemLeft" align="right" valign="top"><a id="a345480e30c83415ff1a25c5c7bfc5cd0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_TIMESTAMP0_REG</b>&#160;&#160;&#160;0x40</td></tr>
+<tr class="separator:a345480e30c83415ff1a25c5c7bfc5cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280c83717481d33bae1edf449fa4499a"><td class="memItemLeft" align="right" valign="top"><a id="a280c83717481d33bae1edf449fa4499a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_TIMESTAMP1_REG</b>&#160;&#160;&#160;0x41</td></tr>
+<tr class="separator:a280c83717481d33bae1edf449fa4499a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf63452c6977bbef99fe9ad428e38e93"><td class="memItemLeft" align="right" valign="top"><a id="abf63452c6977bbef99fe9ad428e38e93"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_TIMESTAMP2_REG</b>&#160;&#160;&#160;0x42</td></tr>
+<tr class="separator:abf63452c6977bbef99fe9ad428e38e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27564d42062691831dfc5f88c6856768"><td class="memItemLeft" align="right" valign="top"><a id="a27564d42062691831dfc5f88c6856768"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_STEP_TIMESTAMP_L</b>&#160;&#160;&#160;0x49</td></tr>
+<tr class="separator:a27564d42062691831dfc5f88c6856768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e9789222ce218db651eabdf921324c"><td class="memItemLeft" align="right" valign="top"><a id="ab8e9789222ce218db651eabdf921324c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_STEP_TIMESTAMP_H</b>&#160;&#160;&#160;0x4A</td></tr>
+<tr class="separator:ab8e9789222ce218db651eabdf921324c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02caee8152ae0086b80a10b8cc343c51"><td class="memItemLeft" align="right" valign="top"><a id="a02caee8152ae0086b80a10b8cc343c51"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_STEP_COUNTER_L</b>&#160;&#160;&#160;0x4B</td></tr>
+<tr class="separator:a02caee8152ae0086b80a10b8cc343c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b3c24de9a89560bbe0ba851ce2c156f"><td class="memItemLeft" align="right" valign="top"><a id="a8b3c24de9a89560bbe0ba851ce2c156f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_STEP_COUNTER_H</b>&#160;&#160;&#160;0x4C</td></tr>
+<tr class="separator:a8b3c24de9a89560bbe0ba851ce2c156f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ced7575951059b106dbc144f2d924ef"><td class="memItemLeft" align="right" valign="top"><a id="a2ced7575951059b106dbc144f2d924ef"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB13_REG</b>&#160;&#160;&#160;0x4D</td></tr>
+<tr class="separator:a2ced7575951059b106dbc144f2d924ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaafba46aaf5d8a7de12fb936be9fc882"><td class="memItemLeft" align="right" valign="top"><a id="aaafba46aaf5d8a7de12fb936be9fc882"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB14_REG</b>&#160;&#160;&#160;0x4E</td></tr>
+<tr class="separator:aaafba46aaf5d8a7de12fb936be9fc882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14667a7597f1f8434e73101eb6ab1475"><td class="memItemLeft" align="right" valign="top"><a id="a14667a7597f1f8434e73101eb6ab1475"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB15_REG</b>&#160;&#160;&#160;0x4F</td></tr>
+<tr class="separator:a14667a7597f1f8434e73101eb6ab1475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa685d81402488ee2077d03becb3fcdec"><td class="memItemLeft" align="right" valign="top"><a id="aa685d81402488ee2077d03becb3fcdec"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB16_REG</b>&#160;&#160;&#160;0x50</td></tr>
+<tr class="separator:aa685d81402488ee2077d03becb3fcdec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9559aa3f71c516097aafdf26d9f25bb"><td class="memItemLeft" align="right" valign="top"><a id="ae9559aa3f71c516097aafdf26d9f25bb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB17_REG</b>&#160;&#160;&#160;0x51</td></tr>
+<tr class="separator:ae9559aa3f71c516097aafdf26d9f25bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c84fcee0aeb95172126bd30b4bdb6cc"><td class="memItemLeft" align="right" valign="top"><a id="a1c84fcee0aeb95172126bd30b4bdb6cc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SENSORHUB18_REG</b>&#160;&#160;&#160;0x52</td></tr>
+<tr class="separator:a1c84fcee0aeb95172126bd30b4bdb6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a303ab5380c58156b8fcb43b0dbc27208"><td class="memItemLeft" align="right" valign="top"><a id="a303ab5380c58156b8fcb43b0dbc27208"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FUNC_SRC</b>&#160;&#160;&#160;0x53</td></tr>
+<tr class="separator:a303ab5380c58156b8fcb43b0dbc27208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bc9a86370611c044082fe7bc3960745"><td class="memItemLeft" align="right" valign="top"><a id="a0bc9a86370611c044082fe7bc3960745"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_TAP_CFG</b>&#160;&#160;&#160;0x58</td></tr>
+<tr class="separator:a0bc9a86370611c044082fe7bc3960745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7aa1b0468ccb0101709e4d05a2ca1cf"><td class="memItemLeft" align="right" valign="top"><a id="aa7aa1b0468ccb0101709e4d05a2ca1cf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_TAP_THS_6D</b>&#160;&#160;&#160;0x59</td></tr>
+<tr class="separator:aa7aa1b0468ccb0101709e4d05a2ca1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abff9112e712ecedc4aa2fb8c8b2e50bd"><td class="memItemLeft" align="right" valign="top"><a id="abff9112e712ecedc4aa2fb8c8b2e50bd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_INT_DUR2</b>&#160;&#160;&#160;0x5A</td></tr>
+<tr class="separator:abff9112e712ecedc4aa2fb8c8b2e50bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a161e22fdd923b188f07955a24367f00b"><td class="memItemLeft" align="right" valign="top"><a id="a161e22fdd923b188f07955a24367f00b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_WAKE_UP_THS</b>&#160;&#160;&#160;0x5B</td></tr>
+<tr class="separator:a161e22fdd923b188f07955a24367f00b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a954ce48d5d0649baa1c9c5392a061bf8"><td class="memItemLeft" align="right" valign="top"><a id="a954ce48d5d0649baa1c9c5392a061bf8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_WAKE_UP_DUR</b>&#160;&#160;&#160;0x5C</td></tr>
+<tr class="separator:a954ce48d5d0649baa1c9c5392a061bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff01e2a7f8339934d1dbd8c5a96def5"><td class="memItemLeft" align="right" valign="top"><a id="a7ff01e2a7f8339934d1dbd8c5a96def5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FREE_FALL</b>&#160;&#160;&#160;0x5D</td></tr>
+<tr class="separator:a7ff01e2a7f8339934d1dbd8c5a96def5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49d4d9a3e39c6d0f8fc7a2c54320ce83"><td class="memItemLeft" align="right" valign="top"><a id="a49d4d9a3e39c6d0f8fc7a2c54320ce83"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MD1_CFG</b>&#160;&#160;&#160;0x5E</td></tr>
+<tr class="separator:a49d4d9a3e39c6d0f8fc7a2c54320ce83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55c6061ceaef98598201bdd846b736f2"><td class="memItemLeft" align="right" valign="top"><a id="a55c6061ceaef98598201bdd846b736f2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MD2_CFG</b>&#160;&#160;&#160;0x5F</td></tr>
+<tr class="separator:a55c6061ceaef98598201bdd846b736f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c236ea2c9c81badfb576c6ec598d2c2"><td class="memItemLeft" align="right" valign="top"><a id="a0c236ea2c9c81badfb576c6ec598d2c2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUT_MAG_RAW_X_L</b>&#160;&#160;&#160;0x66</td></tr>
+<tr class="separator:a0c236ea2c9c81badfb576c6ec598d2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e8d609744a9aabb4f35aeaa445b1a6c"><td class="memItemLeft" align="right" valign="top"><a id="a7e8d609744a9aabb4f35aeaa445b1a6c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUT_MAG_RAW_X_H</b>&#160;&#160;&#160;0x67</td></tr>
+<tr class="separator:a7e8d609744a9aabb4f35aeaa445b1a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9525bc3f0d9ce98fb4b9c1029061e3db"><td class="memItemLeft" align="right" valign="top"><a id="a9525bc3f0d9ce98fb4b9c1029061e3db"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUT_MAG_RAW_Y_L</b>&#160;&#160;&#160;0x68</td></tr>
+<tr class="separator:a9525bc3f0d9ce98fb4b9c1029061e3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac636965fe5d0f876b009844b708d929d"><td class="memItemLeft" align="right" valign="top"><a id="ac636965fe5d0f876b009844b708d929d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUT_MAG_RAW_Y_H</b>&#160;&#160;&#160;0x69</td></tr>
+<tr class="separator:ac636965fe5d0f876b009844b708d929d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07f96a082f6a79f3d29183a948e79c74"><td class="memItemLeft" align="right" valign="top"><a id="a07f96a082f6a79f3d29183a948e79c74"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUT_MAG_RAW_Z_L</b>&#160;&#160;&#160;0x6A</td></tr>
+<tr class="separator:a07f96a082f6a79f3d29183a948e79c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac413fa3779978daac1ceb8e86acfd345"><td class="memItemLeft" align="right" valign="top"><a id="ac413fa3779978daac1ceb8e86acfd345"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_OUT_MAG_RAW_Z_H</b>&#160;&#160;&#160;0x6B</td></tr>
+<tr class="separator:ac413fa3779978daac1ceb8e86acfd345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c3886d059befad14138a3df25a6790a"><td class="memItemLeft" align="right" valign="top"><a id="a5c3886d059befad14138a3df25a6790a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLV0_ADD</b>&#160;&#160;&#160;0x02</td></tr>
+<tr class="separator:a5c3886d059befad14138a3df25a6790a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad64485d2db6971dd6a056e3da5528de"><td class="memItemLeft" align="right" valign="top"><a id="aad64485d2db6971dd6a056e3da5528de"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLV0_SUBADD</b>&#160;&#160;&#160;0x03</td></tr>
+<tr class="separator:aad64485d2db6971dd6a056e3da5528de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f6da7557a7d7dd213a1f92c36de84e"><td class="memItemLeft" align="right" valign="top"><a id="a83f6da7557a7d7dd213a1f92c36de84e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLAVE0_CONFIG</b>&#160;&#160;&#160;0x04</td></tr>
+<tr class="separator:a83f6da7557a7d7dd213a1f92c36de84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aac5dc7342b6d0de1116606dc49b30a"><td class="memItemLeft" align="right" valign="top"><a id="a9aac5dc7342b6d0de1116606dc49b30a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLV1_ADD</b>&#160;&#160;&#160;0x05</td></tr>
+<tr class="separator:a9aac5dc7342b6d0de1116606dc49b30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a890686ede8ad1edd9f3ffbb47781dc9d"><td class="memItemLeft" align="right" valign="top"><a id="a890686ede8ad1edd9f3ffbb47781dc9d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLV1_SUBADD</b>&#160;&#160;&#160;0x06</td></tr>
+<tr class="separator:a890686ede8ad1edd9f3ffbb47781dc9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf2185fcd8eb38c91d561e777d1c9459"><td class="memItemLeft" align="right" valign="top"><a id="acf2185fcd8eb38c91d561e777d1c9459"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLAVE1_CONFIG</b>&#160;&#160;&#160;0x07</td></tr>
+<tr class="separator:acf2185fcd8eb38c91d561e777d1c9459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae77ee527e529ffa1bfda5cdfa64b4596"><td class="memItemLeft" align="right" valign="top"><a id="ae77ee527e529ffa1bfda5cdfa64b4596"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLV2_ADD</b>&#160;&#160;&#160;0x08</td></tr>
+<tr class="separator:ae77ee527e529ffa1bfda5cdfa64b4596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6de93f8ec2b6308a6ed6cfe79fb9ca57"><td class="memItemLeft" align="right" valign="top"><a id="a6de93f8ec2b6308a6ed6cfe79fb9ca57"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLV2_SUBADD</b>&#160;&#160;&#160;0x09</td></tr>
+<tr class="separator:a6de93f8ec2b6308a6ed6cfe79fb9ca57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af70290696f38171f090bc06b9d62ddc8"><td class="memItemLeft" align="right" valign="top"><a id="af70290696f38171f090bc06b9d62ddc8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLAVE2_CONFIG</b>&#160;&#160;&#160;0x0A</td></tr>
+<tr class="separator:af70290696f38171f090bc06b9d62ddc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8410b93e0341fd65843fc0f319d3df6"><td class="memItemLeft" align="right" valign="top"><a id="ac8410b93e0341fd65843fc0f319d3df6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLV3_ADD</b>&#160;&#160;&#160;0x0B</td></tr>
+<tr class="separator:ac8410b93e0341fd65843fc0f319d3df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3843faba5629691094ebe31c6e14c628"><td class="memItemLeft" align="right" valign="top"><a id="a3843faba5629691094ebe31c6e14c628"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLV3_SUBADD</b>&#160;&#160;&#160;0x0C</td></tr>
+<tr class="separator:a3843faba5629691094ebe31c6e14c628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac65855c8bfeb592d363f34dcac042b51"><td class="memItemLeft" align="right" valign="top"><a id="ac65855c8bfeb592d363f34dcac042b51"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SLAVE3_CONFIG</b>&#160;&#160;&#160;0x0D</td></tr>
+<tr class="separator:ac65855c8bfeb592d363f34dcac042b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab4c3e2ce1ce49d171e23e2286f11393"><td class="memItemLeft" align="right" valign="top"><a id="aab4c3e2ce1ce49d171e23e2286f11393"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_DATAWRITE_SRC_</b>&#160;&#160;&#160;MODE_SUB_SLV0 0x0E</td></tr>
+<tr class="separator:aab4c3e2ce1ce49d171e23e2286f11393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92096ba68880608d4af87dbf3ded8a54"><td class="memItemLeft" align="right" valign="top"><a id="a92096ba68880608d4af87dbf3ded8a54"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_PEDO_THS_REG</b>&#160;&#160;&#160;0x0F</td></tr>
+<tr class="separator:a92096ba68880608d4af87dbf3ded8a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67c45df6f53082a729674c1042efa5a8"><td class="memItemLeft" align="right" valign="top"><a id="a67c45df6f53082a729674c1042efa5a8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_SM_THS</b>&#160;&#160;&#160;0x13</td></tr>
+<tr class="separator:a67c45df6f53082a729674c1042efa5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf5ab34d13a2dd72fe497b3a965a8706"><td class="memItemLeft" align="right" valign="top"><a id="abf5ab34d13a2dd72fe497b3a965a8706"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_PEDO_DEB_REG</b>&#160;&#160;&#160;0x14</td></tr>
+<tr class="separator:abf5ab34d13a2dd72fe497b3a965a8706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e2c4fd1cd720465d7d5440c25944c8"><td class="memItemLeft" align="right" valign="top"><a id="a31e2c4fd1cd720465d7d5440c25944c8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_STEP_COUNT_DELTA</b>&#160;&#160;&#160;0x15</td></tr>
+<tr class="separator:a31e2c4fd1cd720465d7d5440c25944c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff77e5e4c4f8a1a1678f42924a1cdda"><td class="memItemLeft" align="right" valign="top"><a id="a4ff77e5e4c4f8a1a1678f42924a1cdda"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_SI_XX</b>&#160;&#160;&#160;0x24</td></tr>
+<tr class="separator:a4ff77e5e4c4f8a1a1678f42924a1cdda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad60a87b1e3b737832e592a3ade955c36"><td class="memItemLeft" align="right" valign="top"><a id="ad60a87b1e3b737832e592a3ade955c36"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_SI_XY</b>&#160;&#160;&#160;0x25</td></tr>
+<tr class="separator:ad60a87b1e3b737832e592a3ade955c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57bdac407aacb0fa0e7c7e650ced6e7a"><td class="memItemLeft" align="right" valign="top"><a id="a57bdac407aacb0fa0e7c7e650ced6e7a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_SI_XZ</b>&#160;&#160;&#160;0x26</td></tr>
+<tr class="separator:a57bdac407aacb0fa0e7c7e650ced6e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed658c254f2a80e2ebd1783574c9ba2f"><td class="memItemLeft" align="right" valign="top"><a id="aed658c254f2a80e2ebd1783574c9ba2f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_SI_YX</b>&#160;&#160;&#160;0x27</td></tr>
+<tr class="separator:aed658c254f2a80e2ebd1783574c9ba2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab824c5ff53230be4637da394949ada20"><td class="memItemLeft" align="right" valign="top"><a id="ab824c5ff53230be4637da394949ada20"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_SI_YY</b>&#160;&#160;&#160;0x28</td></tr>
+<tr class="separator:ab824c5ff53230be4637da394949ada20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523a5729dd074dad31de343ac8164804"><td class="memItemLeft" align="right" valign="top"><a id="a523a5729dd074dad31de343ac8164804"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_SI_YZ</b>&#160;&#160;&#160;0x29</td></tr>
+<tr class="separator:a523a5729dd074dad31de343ac8164804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae164803b2d027ef79fcfecde45f24fd"><td class="memItemLeft" align="right" valign="top"><a id="aae164803b2d027ef79fcfecde45f24fd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_SI_ZX</b>&#160;&#160;&#160;0x2A</td></tr>
+<tr class="separator:aae164803b2d027ef79fcfecde45f24fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a803b24d3eb3ab1c8a488aab0b9760b"><td class="memItemLeft" align="right" valign="top"><a id="a3a803b24d3eb3ab1c8a488aab0b9760b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_SI_ZY</b>&#160;&#160;&#160;0x2B</td></tr>
+<tr class="separator:a3a803b24d3eb3ab1c8a488aab0b9760b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa060e00521c5df413bbb197da054ec5"><td class="memItemLeft" align="right" valign="top"><a id="aaa060e00521c5df413bbb197da054ec5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_SI_ZZ</b>&#160;&#160;&#160;0x2C</td></tr>
+<tr class="separator:aaa060e00521c5df413bbb197da054ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa9492a3fd6860fa6e06cb8af7d72c0c"><td class="memItemLeft" align="right" valign="top"><a id="afa9492a3fd6860fa6e06cb8af7d72c0c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_OFFX_L</b>&#160;&#160;&#160;0x2D</td></tr>
+<tr class="separator:afa9492a3fd6860fa6e06cb8af7d72c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab75ae6032c2f641c7cf822e4d6499f6a"><td class="memItemLeft" align="right" valign="top"><a id="ab75ae6032c2f641c7cf822e4d6499f6a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_OFFX_H</b>&#160;&#160;&#160;0x2E</td></tr>
+<tr class="separator:ab75ae6032c2f641c7cf822e4d6499f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbab0816bf66c8e5131b611dcad6e9de"><td class="memItemLeft" align="right" valign="top"><a id="adbab0816bf66c8e5131b611dcad6e9de"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_OFFY_L</b>&#160;&#160;&#160;0x2F</td></tr>
+<tr class="separator:adbab0816bf66c8e5131b611dcad6e9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2845fe765ba1a4058723a76bb693b14b"><td class="memItemLeft" align="right" valign="top"><a id="a2845fe765ba1a4058723a76bb693b14b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_OFFY_H</b>&#160;&#160;&#160;0x30</td></tr>
+<tr class="separator:a2845fe765ba1a4058723a76bb693b14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a604510f546fccd1e01071d404bc125b3"><td class="memItemLeft" align="right" valign="top"><a id="a604510f546fccd1e01071d404bc125b3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_OFFZ_L</b>&#160;&#160;&#160;0x31</td></tr>
+<tr class="separator:a604510f546fccd1e01071d404bc125b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6d225f77627030646c256d63fde1db"><td class="memItemLeft" align="right" valign="top"><a id="a3a6d225f77627030646c256d63fde1db"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_MAG_OFFZ_H</b>&#160;&#160;&#160;0x32</td></tr>
+<tr class="separator:a3a6d225f77627030646c256d63fde1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae93e05fdd6268d7811e5ece3eee146"><td class="memItemLeft" align="right" valign="top"><a id="adae93e05fdd6268d7811e5ece3eee146"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_XL_0</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:adae93e05fdd6268d7811e5ece3eee146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8166e81d7d56970c00134b0fa22c2d38"><td class="memItemLeft" align="right" valign="top"><a id="a8166e81d7d56970c00134b0fa22c2d38"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_XL_12_5</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a8166e81d7d56970c00134b0fa22c2d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70dfd7f18d4dc201a21fc000a384d9cc"><td class="memItemLeft" align="right" valign="top"><a id="a70dfd7f18d4dc201a21fc000a384d9cc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_XL_26</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a70dfd7f18d4dc201a21fc000a384d9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5f5e9dbf5525c502c5d673b757b44c"><td class="memItemLeft" align="right" valign="top"><a id="a0d5f5e9dbf5525c502c5d673b757b44c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_XL_52</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a0d5f5e9dbf5525c502c5d673b757b44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa821c104aab7c4283d1a6289db288fb6"><td class="memItemLeft" align="right" valign="top"><a id="aa821c104aab7c4283d1a6289db288fb6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_XL_104</b>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:aa821c104aab7c4283d1a6289db288fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d2c4e29b672dfa690c8f5028c74e055"><td class="memItemLeft" align="right" valign="top"><a id="a6d2c4e29b672dfa690c8f5028c74e055"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_XL_208</b>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a6d2c4e29b672dfa690c8f5028c74e055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ad8e707606330edd83cf0d41b0556b"><td class="memItemLeft" align="right" valign="top"><a id="a95ad8e707606330edd83cf0d41b0556b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_XL_416</b>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a95ad8e707606330edd83cf0d41b0556b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e597c5d16285562dbbca26460f7e403"><td class="memItemLeft" align="right" valign="top"><a id="a3e597c5d16285562dbbca26460f7e403"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_XL_833</b>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:a3e597c5d16285562dbbca26460f7e403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d299edea7f5d22af65f95c927fff4e6"><td class="memItemLeft" align="right" valign="top"><a id="a4d299edea7f5d22af65f95c927fff4e6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_XL_1660</b>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a4d299edea7f5d22af65f95c927fff4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cbe9f74e08499a4db7c5eef67ad79b0"><td class="memItemLeft" align="right" valign="top"><a id="a3cbe9f74e08499a4db7c5eef67ad79b0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_XL_3300</b>&#160;&#160;&#160;9</td></tr>
+<tr class="separator:a3cbe9f74e08499a4db7c5eef67ad79b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a1b7f2308585aff91631045e41592b2"><td class="memItemLeft" align="right" valign="top"><a id="a2a1b7f2308585aff91631045e41592b2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_XL_6660</b>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a2a1b7f2308585aff91631045e41592b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9bdd1e3dafae71404636ea2ce13deec"><td class="memItemLeft" align="right" valign="top"><a id="aa9bdd1e3dafae71404636ea2ce13deec"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FS_XL_2</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:aa9bdd1e3dafae71404636ea2ce13deec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee4acd0c614d6bf70879fe0a67291b7"><td class="memItemLeft" align="right" valign="top"><a id="aeee4acd0c614d6bf70879fe0a67291b7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FS_XL_4</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:aeee4acd0c614d6bf70879fe0a67291b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca62932e5f2c9301330b36c393cc866"><td class="memItemLeft" align="right" valign="top"><a id="aeca62932e5f2c9301330b36c393cc866"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FS_XL_8</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:aeca62932e5f2c9301330b36c393cc866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fda8ae55f2a25846d5db0e67dee020b"><td class="memItemLeft" align="right" valign="top"><a id="a8fda8ae55f2a25846d5db0e67dee020b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FS_XL_16</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a8fda8ae55f2a25846d5db0e67dee020b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ebaf3314ec0d80b9f202cc8455e0bb4"><td class="memItemLeft" align="right" valign="top"><a id="a5ebaf3314ec0d80b9f202cc8455e0bb4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_BW_XL_50</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a5ebaf3314ec0d80b9f202cc8455e0bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf01d6f4c94b7fa3130a10c300b59e33"><td class="memItemLeft" align="right" valign="top"><a id="abf01d6f4c94b7fa3130a10c300b59e33"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_BW_XL_100</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:abf01d6f4c94b7fa3130a10c300b59e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb0e8ea08d3c2bea3b81aac08fe3beb9"><td class="memItemLeft" align="right" valign="top"><a id="afb0e8ea08d3c2bea3b81aac08fe3beb9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_BW_XL_200</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:afb0e8ea08d3c2bea3b81aac08fe3beb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f854ff5667adfb044fc850f42d9ec0"><td class="memItemLeft" align="right" valign="top"><a id="a65f854ff5667adfb044fc850f42d9ec0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_BW_XL_400</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a65f854ff5667adfb044fc850f42d9ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316edcad91ebab23386853d940403b50"><td class="memItemLeft" align="right" valign="top"><a id="a316edcad91ebab23386853d940403b50"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_G_0</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a316edcad91ebab23386853d940403b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a684de05267308b884c0c80240972619f"><td class="memItemLeft" align="right" valign="top"><a id="a684de05267308b884c0c80240972619f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_G_12_5</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a684de05267308b884c0c80240972619f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecda72938439df3db323b9c00667919e"><td class="memItemLeft" align="right" valign="top"><a id="aecda72938439df3db323b9c00667919e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_G_26</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:aecda72938439df3db323b9c00667919e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30cf29cb9893c7e651cac509c11a395e"><td class="memItemLeft" align="right" valign="top"><a id="a30cf29cb9893c7e651cac509c11a395e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_G_52</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a30cf29cb9893c7e651cac509c11a395e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c615c29b53c296bac14925b187a14b9"><td class="memItemLeft" align="right" valign="top"><a id="a8c615c29b53c296bac14925b187a14b9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_G_104</b>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a8c615c29b53c296bac14925b187a14b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae54520a37e514d83a82f4f04b396ae4d"><td class="memItemLeft" align="right" valign="top"><a id="ae54520a37e514d83a82f4f04b396ae4d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_G_208</b>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:ae54520a37e514d83a82f4f04b396ae4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e14fcfff2dd000a4b118fda3e794e18"><td class="memItemLeft" align="right" valign="top"><a id="a2e14fcfff2dd000a4b118fda3e794e18"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_G_416</b>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a2e14fcfff2dd000a4b118fda3e794e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa8ab962ce0e08aca4e1a53754863f16"><td class="memItemLeft" align="right" valign="top"><a id="aaa8ab962ce0e08aca4e1a53754863f16"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_G_833</b>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:aaa8ab962ce0e08aca4e1a53754863f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4082e0c21ae00e76973b11d6ad65c70a"><td class="memItemLeft" align="right" valign="top"><a id="a4082e0c21ae00e76973b11d6ad65c70a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_ODR_G_1666</b>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a4082e0c21ae00e76973b11d6ad65c70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a918f58568e10a034a96d0de76710f052"><td class="memItemLeft" align="right" valign="top"><a id="a918f58568e10a034a96d0de76710f052"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FS_G_250</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a918f58568e10a034a96d0de76710f052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d4339b69499155be93f4a51976ee29e"><td class="memItemLeft" align="right" valign="top"><a id="a0d4339b69499155be93f4a51976ee29e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FS_G_500</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a0d4339b69499155be93f4a51976ee29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a850a389cb9f013b2517835d769e3b"><td class="memItemLeft" align="right" valign="top"><a id="a95a850a389cb9f013b2517835d769e3b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FS_G_1000</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a95a850a389cb9f013b2517835d769e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a111ff83aa603f77fffcd97012749ffd4"><td class="memItemLeft" align="right" valign="top"><a id="a111ff83aa603f77fffcd97012749ffd4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LSM6DS3_FS_G_2000</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a111ff83aa603f77fffcd97012749ffd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Zmienne</h2></td></tr>
+<tr class="memitem:aa5e503a6acaa1d02e97be3102dff04d7"><td class="memItemLeft" align="right" valign="top"><a id="aa5e503a6acaa1d02e97be3102dff04d7"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_fast___l_s_m6_d_s3_8h.html#aa5e503a6acaa1d02e97be3102dff04d7">LSM6DS3_RESERVED</a> [] = {0x00, 0x02, 0x03, 0x05, 0xDC, 0x1F}</td></tr>
+<tr class="memdesc:aa5e503a6acaa1d02e97be3102dff04d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adresy rejestrów zarezerwowanych. <br /></td></tr>
+<tr class="separator:aa5e503a6acaa1d02e97be3102dff04d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Główny plik nagłówkowy. </p>
+<dl class="section author"><dt>Autor</dt><dd>Jakub Kołton </dd></dl>
+<dl class="section version"><dt>Wersja</dt><dd>6.0 </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>2021-06-24</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) Jakub Kołton 2021 </dd></dl>
+
+<p class="definition">Definicja w pliku <a class="el" href="_fast___l_s_m6_d_s3_8h_source.html">Fast_LSM6DS3.h</a>.</p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_413f4e031a85da0d68269c6fd2f76e1c.html">Src</a></li><li class="navelem"><a class="el" href="_fast___l_s_m6_d_s3_8h.html">Fast_LSM6DS3.h</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

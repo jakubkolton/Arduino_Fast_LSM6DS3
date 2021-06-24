@@ -1,0 +1,4 @@
+<map id="LSM6DS3::setScale_G" name="LSM6DS3::setScale_G">
+<area shape="rect" id="node1" title="Ustawienie FS (zakresu pomiarowego) żyroskopu." alt="" coords="5,5,163,32"/>
+<area shape="rect" id="node2" href="$class_l_s_m6_d_s3.html#a1443f388a1d9b351df38d8fe4f0e6a26" title="Metoda zwracajaca wartosc rejestru." alt="" coords="211,5,373,32"/>
+</map>

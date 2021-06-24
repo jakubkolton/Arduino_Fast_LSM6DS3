@@ -1,0 +1,4 @@
+<map id="LSM6DS3::begin" name="LSM6DS3::begin">
+<area shape="rect" id="node1" title="Inicjalizacja akcelerometru &#45; z wybranymi parametrami (parametry jak w funkcjach ustawiających je)" alt="" coords="5,5,125,32"/>
+<area shape="rect" id="node2" href="$class_l_s_m6_d_s3.html#a1443f388a1d9b351df38d8fe4f0e6a26" title="Metoda zwracajaca wartosc rejestru." alt="" coords="173,5,336,32"/>
+</map>

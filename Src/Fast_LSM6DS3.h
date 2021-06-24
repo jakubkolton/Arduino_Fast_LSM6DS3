@@ -1,3 +1,14 @@
+/**
+ * @file Fast_LSM6DS3.h
+ * @author Jakub Kołton
+ * @brief Główny plik nagłówkowy
+ * @version 6.0
+ * @date 2021-06-24
+ * 
+ * @copyright Copyright (c) Jakub Kołton 2021
+ * 
+ */
+
 /*
     Author: Jakub Kolton
 
@@ -12,6 +23,10 @@
 #include <Arduino.h>
 #include <Wire.h>
 
+/**
+ * @brief Domyślny adres I2C akcelerometru
+ * 
+ */
 #define LSM6DS3_I2C_ADDRESS_DEFAULT 0x6A // domyslny adres I2C akcelerometru
 
 // Rejestry czujnika
@@ -136,6 +151,10 @@
 #define LSM6DS3_MAG_OFFZ_L 0x31
 #define LSM6DS3_MAG_OFFZ_H 0x32
 
+/**
+ * @brief Adresy rejestrów zarezerwowanych
+ * 
+ */
 // Rejestry zarezerwowane - nie wpisywac do nich
 const uint8_t LSM6DS3_RESERVED[] = {0x00, 0x02, 0x03, 0x05, 0xDC, 0x1F};
 // Dodatkowo: 0x43-48, 0x54-57, 0x60-65

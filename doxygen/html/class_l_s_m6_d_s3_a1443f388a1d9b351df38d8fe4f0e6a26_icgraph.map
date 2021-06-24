@@ -1,0 +1,10 @@
+<map id="LSM6DS3::readRegister" name="LSM6DS3::readRegister">
+<area shape="rect" id="node1" title="Metoda zwracajaca wartosc rejestru." alt="" coords="235,157,397,184"/>
+<area shape="rect" id="node2" href="$class_l_s_m6_d_s3.html#af396582f604e11fefd3ca605e46fbe2f" title="Inicjalizacja akcelerometru &#45; z wybranymi parametrami (parametry jak w funkcjach ustawiających je)" alt="" coords="36,5,156,32"/>
+<area shape="rect" id="node3" href="$class_l_s_m6_d_s3.html#a7c8be1ef40b3126ac4868e7018b7b45e" title="Inicjacja akcelerometru &#45; z domyślnymi parametrami: [akcelerometru &#45; 104 Hz, 4g, tryb Bypass,..." alt="" coords="23,56,169,83"/>
+<area shape="rect" id="node4" href="$class_l_s_m6_d_s3.html#a5e7c930840f775120e245c284f5efa5d" title="Ustawienie BW (pasma filtru anty&#45;aliasingowego) akcelerometru." alt="" coords="5,107,187,133"/>
+<area shape="rect" id="node5" href="$class_l_s_m6_d_s3.html#aab73776cc2f6b242df1aa8b2c7a6d72c" title="Ustawienie ODR (czestotliwosci wysylania pomiarow) żyroskopu." alt="" coords="21,157,171,184"/>
+<area shape="rect" id="node6" href="$class_l_s_m6_d_s3.html#ab0b0bc00901f7efbb15e3f36a73e7b5d" title="Ustawienie ODR (czestotliwosci wysylania pomiarow) akcelerometru." alt="" coords="19,208,173,235"/>
+<area shape="rect" id="node7" href="$class_l_s_m6_d_s3.html#af323da1b5b4c7c9fa2889bb01280eee3" title="Ustawienie FS (zakresu pomiarowego) żyroskopu." alt="" coords="17,259,175,285"/>
+<area shape="rect" id="node8" href="$class_l_s_m6_d_s3.html#afe052a5f646a0a5dc61586ceaa64bf00" title="Ustawienie FS (zakresu pomiarowego) akcelerometru." alt="" coords="15,309,177,336"/>
+</map>

@@ -1,3 +1,14 @@
+/**
+ * @file Fast_LSM6DS3.cpp
+ * @author Jakub Kołton
+ * @brief Główny plik źródłowy
+ * @version 6.0
+ * @date 2021-06-24
+ * 
+ * @copyright Copyright (c) Jakub Kołton 2021
+ * 
+ */
+
 /*
     Author: Jakub Kolton
 
@@ -8,6 +19,13 @@
 
 #include "Fast_LSM6DS3.h"
 
+/**
+ * @brief Konstruktor obiektu akcelerometru (klasy LSM6DS3)
+ * 
+ * @param i2c: Uchwyt do I2C (z biblioteki Wire.h; zalecana wartość: Wire) 
+ * @param i2c_addr: Adres I2C akcelerometru (zalecana wartość: LSM6DS3_I2C_ADDRESS_DEFAULT)
+ * @return LSM6DS3 Obiekt klasy LSM6DS3
+ */
 // Konstruktor obiektu akcelerometru
 LSM6DS3 ::LSM6DS3(TwoWire &i2c, uint8_t i2c_addr)
 {
@@ -15,6 +33,11 @@ LSM6DS3 ::LSM6DS3(TwoWire &i2c, uint8_t i2c_addr)
     I2C_Address = i2c_addr;
 }
 
+/**
+ * @brief Destruktor obiektu akcelerometru (klasy LSM6DS3)
+ * 
+ * @return None
+ */
 // Destruktor obiektu akcelerometru
 LSM6DS3 ::~LSM6DS3()
 {
@@ -22,6 +45,16 @@ LSM6DS3 ::~LSM6DS3()
 }
 
 
+/**
+ * @brief Metoda czytania rejestru 1-bajtowego do zmiennej
+ * 
+ * @param addr Adres rejestru czujnika (np. 0x0A; zalecana wartość: zdefiniowane stałe LSM6DS3_x z pliku .h)
+ * @param data Zmienna, do której czytany jest rejestr (zalecany typ: uint8_t)
+ * @return int Kod błędu:
+ *              1 - poprawne wykonanie;
+ *              0 - zbyt mało odebranych danych;
+ *             -1 - błąd transmisji
+ */
 // Metoda czytania rejestru 1-bajtowego do zmiennej
 int LSM6DS3 ::getRegister(uint8_t addr, uint8_t &data)
 {
@@ -46,6 +79,12 @@ int LSM6DS3 ::getRegister(uint8_t addr, uint8_t &data)
     return 1; // kod poprawnego wykonania
 }
 
+/**
+ * @brief Metoda zwracajaca wartosc rejestru
+ * 
+ * @param addr Adres rejestru czujnika (np. 0x0A; zalecana wartość: zdefiniowane stałe LSM6DS3_x z pliku .h)
+ * @return int Wartość zapisana w rejestrze
+ */
 // Metoda zwracajaca wartosc rejestru
 int LSM6DS3 ::readRegister(uint8_t addr)
 {
@@ -60,6 +99,16 @@ int LSM6DS3 ::readRegister(uint8_t addr)
     return value;
 }
 
+/**
+ * @brief Metoda odczytu pomiaru z akcelerometru (dla dowolnych parametrow) w jednostkach g = 9,81 m/s^2
+ * 
+ * @param x Zmienna, w której zapisywane jest przyspieszenie liniowe w osi X (typ: float)
+ * @param y Zmienna, w której zapisywane jest przyspieszenie liniowe w osi Y (typ: float)
+ * @param z Zmienna, w której zapisywane jest przyspieszenie liniowe w osi Z (typ: float)
+ * @return int Kod błędu:
+ *              1 - poprawne wykonanie;
+ *             -1 - nieudany odczyt zakresu pomiarowego
+ */
 // Metoda odczytu pomiaru z akcelerometru (dla dowolnych parametrow)
 int LSM6DS3 ::readAcceleration(float &x, float &y, float &z)
 {
@@ -126,6 +175,15 @@ int LSM6DS3 ::readAcceleration(float &x, float &y, float &z)
     return 1;
 }
 
+/**
+ * @brief Metoda szybkiego odczytu pomiaru z akcelerometru w jednostkach g = 9,81 m/s^2 - dla domyślnych ustawień
+ * 
+ * @param x Zmienna, w której zapisywane jest przyspieszenie liniowe w osi X (typ: float)
+ * @param y Zmienna, w której zapisywane jest przyspieszenie liniowe w osi Y (typ: float)
+ * @param z Zmienna, w której zapisywane jest przyspieszenie liniowe w osi Z (typ: float)
+ * @return int Kod błędu:
+ *              1 - poprawne wykonanie
+ */
 // Metoda szybkiego odczytu pomiaru z akcelerometru - dla domyslnych ustawien
 int LSM6DS3 ::readAccelerationFast(float &x, float &y, float &z)
 {
@@ -165,6 +223,16 @@ int LSM6DS3 ::readAccelerationFast(float &x, float &y, float &z)
     return 1;
 }
 
+/**
+ * @brief Metoda odczytu pomiaru z żyroskopu (dla dowolnych parametrów) w jednostkach dps = stopni/sekundę
+ * 
+ * @param x Zmienna, w której zapisywane jest przyspieszenie kątowe w osi X (typ: float)
+ * @param y Zmienna, w której zapisywane jest przyspieszenie kątowe w osi Y (typ: float)
+ * @param z Zmienna, w której zapisywane jest przyspieszenie kątowe w osi Z (typ: float)
+ * @return int Kod błędu:
+ *              1 - poprawne wykonanie;
+ *             -1 - nieudany odczyt zakresu pomiarowego
+ */
 // Metoda odczytu pomiaru z zyroskopu (dla dowolnych parametrow)
 int LSM6DS3 ::readAngular(float &x, float &y, float &z)
 {
@@ -231,6 +299,15 @@ int LSM6DS3 ::readAngular(float &x, float &y, float &z)
     return 1;
 }
 
+/**
+ * @brief Metoda szybkiego odczytu pomiaru z żyroskopu  w jednostkach dps = stopni/sekundę - dla predefiniowanych ustawień
+ * 
+ * @param x Zmienna, w której zapisywane jest przyspieszenie kątowe w osi X (typ: float)
+ * @param y Zmienna, w której zapisywane jest przyspieszenie kątowe w osi Y (typ: float)
+ * @param z Zmienna, w której zapisywane jest przyspieszenie kątowe w osi Z (typ: float)
+ * @return int Kod błędu:
+ *              1 - poprawne wykonanie
+ */
 // Metoda szybkiego odczytu pomiaru z zyroskopu - dla predefiniowanych ustawien (?jakich?)
 int LSM6DS3 ::readAngularFast(float &x, float &y, float &z)
 {
@@ -270,6 +347,13 @@ int LSM6DS3 ::readAngularFast(float &x, float &y, float &z)
     return 1;
 }
 
+/**
+ * @brief Metoda odczytu pomiaru z termometru w jednostach *C
+ * 
+ * @param x Zmienna, w której zapisywana jest temperatura (typ: float)
+ * @return int Kod błędu:
+ *              1 - poprawne wykonanie
+ */
 // Metoda odczytu pomiaru z termometru
 int LSM6DS3 ::readTemperature(float &x)
 {
@@ -289,6 +373,16 @@ int LSM6DS3 ::readTemperature(float &x)
     return 1;
 }
 
+/**
+ * @brief Metoda zapisu do "bezpiecznego" rejestru - pozwala zapisywać dane do rejestrów, które nie są zabronione.
+ * 
+ * @param addr Adres rejestru czujnika (np. 0x0A; zalecana wartość: zdefiniowane stałe LSM6DS3_x z pliku .h)
+ * @param data Wpisywana dana (typ: uint8_t)
+ * @return int Kod błędu:
+ *             1 - poprawne wykonanie;
+ *            -1 - błąd transmisji;
+ *            -2 - próba zapisu do adresu niedozwolonego
+ */
 // Metoda zapisu do "bezpiecznego" rejestru
 int LSM6DS3 ::writeRegister(uint8_t addr, uint8_t value)
 {
@@ -319,6 +413,15 @@ int LSM6DS3 ::writeRegister(uint8_t addr, uint8_t value)
     return 1; // kod poprawnego wykonania
 }
 
+/**
+ * @brief Metoda szybkiego zapisu do rejestru
+ * 
+ * @param addr Adres rejestru czujnika (np. 0x0A; zalecana wartość: zdefiniowane stałe LSM6DS3_x z pliku .h)
+ * @param data Wpisywana dana (typ: uint8_t)
+ * @return int Kod błędu:
+ *             1 - poprawne wykonanie;
+ *            -1 - błąd transmisji
+ */
 // Metoda szybkiego zapisu do rejestru
 int LSM6DS3 ::writeRegisterFast(uint8_t addr, uint8_t value)
 {
@@ -335,8 +438,17 @@ int LSM6DS3 ::writeRegisterFast(uint8_t addr, uint8_t value)
     return 1; // kod poprawnego wykonania
 }
 
-// Ustawienie ODR (czestotliwosci wysylania pomiarow) akcelerometru
-// Parametr - od 0 do 10: patrz definicje "LSM6DS3_ODR_XL_????"
+
+/**
+ * @brief Ustawienie ODR (czestotliwosci wysylania pomiarow) akcelerometru
+ * 
+ * @param value Predefiniowane wartości (0-10; zalecane: LSM6DS3_ODR_XL_x zdefiniowane w pliku .h)
+ * @return int Kod błędu:
+ *             1 - poprawne wykonanie;
+ *            -1 - błąd transmisji;
+ *            -2 - zły parametr funkcji (wartość większa niż 10)
+ */
+// Ustawienie ODR (czestotliwosci wysylania pomiarow) akcelerometru; Parametr - od 0 do 10: patrz definicje "LSM6DS3_ODR_XL_????"
 int LSM6DS3 ::setFreq_XL(uint8_t value)
 {
     if ((10 < value))
@@ -355,8 +467,16 @@ int LSM6DS3 ::setFreq_XL(uint8_t value)
     return 1; // kod poprawnego wykonania
 }
 
-// Ustawienie FS (zakresu pomiarowego) akcelerometru
-// Parametr - od 0 do 3: patrz definicje "LSM6DS3_FS_XL_??"
+/**
+ * @brief Ustawienie FS (zakresu pomiarowego) akcelerometru
+ * 
+ * @param value Predefiniowane wartości (0-3 zalecane: LSM6DS3_FS_XL_x zdefiniowane w pliku .h)
+ * @return int Kod błędu:
+ *             1 - poprawne wykonanie;
+ *            -1 - błąd transmisji;
+ *            -2 - zły parametr funkcji (wartość większa niż 3)
+ */
+// Ustawienie FS (zakresu pomiarowego) akcelerometru; Parametr - od 0 do 3: patrz definicje "LSM6DS3_FS_XL_??"
 int LSM6DS3 ::setScale_XL(uint8_t value)
 {
     if ((3 < value))
@@ -375,8 +495,16 @@ int LSM6DS3 ::setScale_XL(uint8_t value)
     return 1; // kod poprawnego wykonania
 }
 
-// Ustawienie BW (pasma filtru anty-aliasingowego) akcelerometru
-// Parametr - od 0 do 3: patrz definicje "LSM6DS3_BW_XL_???"
+/**
+ * @brief Ustawienie BW (pasma filtru anty-aliasingowego) akcelerometru
+ * 
+ * @param value Predefiniowane wartości (0-3 zalecane: LSM6DS3_BW_XL_x zdefiniowane w pliku .h)
+ * @return int Kod błędu:
+ *             1 - poprawne wykonanie;
+ *            -1 - błąd transmisji;
+ *            -2 - zły parametr funkcji (wartość większa niż 3)
+ */
+// Ustawienie BW (pasma filtru anty-aliasingowego) akcelerometru; Parametr - od 0 do 3: patrz definicje "LSM6DS3_BW_XL_???"
 int LSM6DS3 ::setBandwith_XL(uint8_t value)
 {
     if ((3 < value))
@@ -395,8 +523,16 @@ int LSM6DS3 ::setBandwith_XL(uint8_t value)
     return 1; // kod poprawnego wykonania
 }
 
-// Ustawienie ODR (czestotliwosci wysylania pomiarow) zyroskopu
-// Parametr - od 0 do 7: patrz definicje "LSM6DS3_ODR_G_???"
+/**
+ * @brief Ustawienie ODR (czestotliwosci wysylania pomiarow) żyroskopu
+ * 
+ * @param value Predefiniowane wartości (0-8; zalecane: LSM6DS3_ODR_G_x zdefiniowane w pliku .h)
+ * @return int Kod błędu:
+ *             1 - poprawne wykonanie;
+ *            -1 - błąd transmisji;
+ *            -2 - zły parametr funkcji (wartość większa niż 8)
+ */
+// Ustawienie ODR (czestotliwosci wysylania pomiarow) zyroskopu; Parametr - od 0 do 7: patrz definicje "LSM6DS3_ODR_G_???"
 int LSM6DS3 ::setFreq_G(uint8_t value)
 {
     if ((8 < value))
@@ -415,8 +551,16 @@ int LSM6DS3 ::setFreq_G(uint8_t value)
     return 1; // kod poprawnego wykonania
 }
 
-// Ustawienie FS (zakresu pomiarowego) zyroskopu
-// Parametr - od 0 do 3: patrz definicje "LSM6DS3_FS_G_??"
+/**
+ * @brief Ustawienie FS (zakresu pomiarowego) żyroskopu
+ * 
+ * @param value Predefiniowane wartości (0-3; zalecane: LSM6DS3_FS_G_x zdefiniowane w pliku .h)
+ * @return int Kod błędu:
+ *             1 - poprawne wykonanie;
+ *            -1 - błąd transmisji;
+ *            -2 - zły parametr funkcji (wartość większa niż 8)
+ */
+// Ustawienie FS (zakresu pomiarowego) zyroskopu; Parametr - od 0 do 3: patrz definicje "LSM6DS3_FS_G_??"
 int LSM6DS3 ::setScale_G(uint8_t value)
 {
     if ((3 < value))
@@ -435,7 +579,13 @@ int LSM6DS3 ::setScale_G(uint8_t value)
     return 1; // kod poprawnego wykonania
 }
 
-
+/**
+ * @brief Inicjacja akcelerometru - z domyślnymi parametrami: [akcelerometru - 104 Hz, 4g, tryb Bypass, ODR/4 (filtr dolnoprz.), tryb High Performance, pasmo 16 MHz]; [zyroskopu - 104 Hz, 2000 dps, tryb Bypass, ODR/4]
+ * 
+ * @return int Kod błędu:
+ *             1 - poprawne wykonanie;
+ *            -1 - brak akcelerometru na magistrali I2C lub błąd transmisji
+ */
 // Inicjacja akcelerometru - z domyslnymi parametrami
 int LSM6DS3 ::beginFast()
 {
@@ -475,8 +625,20 @@ int LSM6DS3 ::beginFast()
     return 1;
 }
 
-// Inicjalizacja akcelerometru - z wybranymi parametrami
-// Paramtery - jak w funkcjach ustawiajacych poszczegolne parametry
+// Inicjalizacja akcelerometru - z wybranymi parametrami; Paramtery - jak w funkcjach ustawiajacych poszczegolne parametry
+/**
+ * @brief Inicjalizacja akcelerometru - z wybranymi parametrami (parametry jak w funkcjach ustawiających je)
+ * 
+ * @param ODR_XL Predefiniowane wartości (0-10; zalecane: LSM6DS3_ODR_XL_x zdefiniowane w pliku .h)
+ * @param FS_XL Predefiniowane wartości (0-3 zalecane: LSM6DS3_FS_XL_x zdefiniowane w pliku .h)
+ * @param BW_XL Predefiniowane wartości (0-3 zalecane: LSM6DS3_BW_XL_x zdefiniowane w pliku .h)
+ * @param ODR_G Predefiniowane wartości (0-8; zalecane: LSM6DS3_ODR_G_x zdefiniowane w pliku .h)
+ * @param FS_G Predefiniowane wartości (0-3; zalecane: LSM6DS3_FS_G_x zdefiniowane w pliku .h)
+ * @return int Kod błędu:
+ *             1 - poprawne wykonanie;
+ *            -1 - błąd transmisji;
+ *            -2 - zły parametr funkcji (zła wartość wpisywana do rejestru)
+ */
 int LSM6DS3 ::begin(uint8_t ODR_XL, uint8_t FS_XL, uint8_t BW_XL, uint8_t ODR_G, uint8_t FS_G)
 {
     if ((10 < ODR_XL) || (3 < FS_XL) || (3 < BW_XL) || (8 < ODR_G) || (3 < FS_G))
@@ -528,6 +690,12 @@ int LSM6DS3 ::begin(uint8_t ODR_XL, uint8_t FS_XL, uint8_t BW_XL, uint8_t ODR_G,
 }
 
 // Wylaczenie akcelerometru
+/**
+ * @brief Wyłączenie akcelerometru
+ * 
+ * @return None
+ * 
+ */
 void LSM6DS3 ::end()
 {
     writeRegisterFast(LSM6DS3_CTRL1_XL, 0x00); // Wylacza akcelerometr
